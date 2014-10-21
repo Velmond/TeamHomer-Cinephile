@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Cinephile._Default" %>
+﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Cinephile._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -26,7 +26,7 @@
                         ImageUrl="<%# Item.PosterPath %>"
                         CssClass="movie-poster"
                         PostBackUrl='<%# "~/MovieDetails.aspx?id=" + Item.Id %>'
-                        Width="100%"
+                        Width="95%"
                         ImageAlign="AbsMiddle"
                         AlternateText="<%# Item.Title %>" />
                 </div>

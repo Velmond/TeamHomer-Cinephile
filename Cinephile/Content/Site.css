@@ -39,6 +39,7 @@ input[type="select"] {
 }
 
 .movie-poster-container {
+    text-align: center;
 }
 
 .movie-poster {
