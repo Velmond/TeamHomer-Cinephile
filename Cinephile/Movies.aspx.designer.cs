@@ -11,7 +11,7 @@ namespace Cinephile
 {
 
 
-    public partial class About
+    public partial class Movies
     {
     }
 }

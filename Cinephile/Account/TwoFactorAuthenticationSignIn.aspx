@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Two-Factor Authentication" Language="C#" MasterPageFile="~/PublicMaster.Master" AutoEventWireup="true" CodeBehind="TwoFactorAuthenticationSignIn.aspx.cs" Inherits="Cinephile.Account.TwoFactorAuthenticationSignIn" %>
+﻿<%@ Page Title="Two-Factor Authentication" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TwoFactorAuthenticationSignIn.aspx.cs" Inherits="Cinephile.Account.TwoFactorAuthenticationSignIn" %>
 
-<asp:Content ID="TwoFactorAuthenticationBodyContent" ContentPlaceHolderID="BodyContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
         <h2><%: Title %>.</h2>
     <asp:PlaceHolder runat="server" ID="sendcode">
         <section>

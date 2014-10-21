@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Phone Number" Language="C#" MasterPageFile="~/PublicMaster.Master" AutoEventWireup="true" CodeBehind="AddPhoneNumber.aspx.cs" Inherits="Cinephile.Account.AddPhoneNumber" %>
+﻿<%@ Page Title="Phone Number" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddPhoneNumber.aspx.cs" Inherits="Cinephile.Account.AddPhoneNumber" %>
 
-<asp:Content ID="PhoneNumberBodyContent" ContentPlaceHolderID="BodyContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
 
     <div class="form-horizontal">

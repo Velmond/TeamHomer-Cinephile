@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Manage Password" Language="C#" MasterPageFile="~/PublicMaster.Master" AutoEventWireup="true" CodeBehind="ManagePassword.aspx.cs" Inherits="Cinephile.Account.ManagePassword" %>
+﻿<%@ Page Title="Manage Password" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManagePassword.aspx.cs" Inherits="Cinephile.Account.ManagePassword" %>
 
-<asp:Content ID="ManagePasswordBodyContent" ContentPlaceHolderID="BodyContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
     <div class="form-horizontal">
         <section id="passwordForm">

@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Account Confirmation" Language="C#" MasterPageFile="~/PublicMaster.Master" AutoEventWireup="true" CodeBehind="Confirm.aspx.cs" Inherits="Cinephile.Account.Confirm" Async="true" %>
+﻿<%@ Page Title="Account Confirmation" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Confirm.aspx.cs" Inherits="Cinephile.Account.Confirm" Async="true" %>
 
-<asp:Content runat="server" ID="AccountConfirmationBodyContent" ContentPlaceHolderID="BodyContent">
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>
 
     <div>

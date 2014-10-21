@@ -11,7 +11,7 @@ namespace Cinephile
 {
 
 
-    public partial class Contact
+    public partial class ReviewMovie
     {
     }
 }

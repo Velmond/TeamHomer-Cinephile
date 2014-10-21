@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Cinephile
 {
-    public partial class PublicMaster : System.Web.UI.MasterPage
+    public partial class ReviewMovie : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
-        {
-            Context.GetOwinContext().Authentication.SignOut();
         }
     }
 }
