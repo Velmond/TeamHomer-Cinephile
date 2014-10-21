@@ -176,23 +176,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <EntityDeploy Include="Data\CinephileDbModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CinephileDbModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Data\CinephileDbModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CinephileDbModel.edmx</DependentUpon>
-      <LastGenOutput>CinephileDbModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Data\CinephileDbModel.edmx.diagram">
-      <DependentUpon>CinephileDbModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Data\CinephileDbModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CinephileDbModel.edmx</DependentUpon>
-      <LastGenOutput>CinephileDbModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Admin\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -386,60 +369,6 @@
     <Compile Include="MovieDetails.aspx.designer.cs">
       <DependentUpon>MovieDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Data\Artists.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AspNetRoles.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AspNetUserClaims.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AspNetUserLogins.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\AspNetUsers.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\CinephileDbModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CinephileDbModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\CinephileDbModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\CinephileDbModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CinephileDbModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Coutries.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\C__MigrationHistory.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Genres.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Languages.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Movies.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Ratings.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Reviews.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\sysdiagrams.cs">
-      <DependentUpon>CinephileDbModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -477,9 +406,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cinephile.Data\Cinephile.Data.csproj">
+      <Project>{e79b7fb4-63d7-447d-b183-76faf2e710f1}</Project>
+      <Name>Cinephile.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

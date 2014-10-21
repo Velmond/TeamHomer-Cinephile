@@ -12,18 +12,16 @@ namespace Cinephile.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Coutries
+    public partial class Language
     {
-        public Coutries()
+        public Language()
         {
-            this.Artists = new HashSet<Artists>();
-            this.Movies = new HashSet<Movies>();
+            this.Movies = new HashSet<Movie>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
     
-        public virtual ICollection<Artists> Artists { get; set; }
-        public virtual ICollection<Movies> Movies { get; set; }
+        public virtual ICollection<Movie> Movies { get; set; }
     }
 }

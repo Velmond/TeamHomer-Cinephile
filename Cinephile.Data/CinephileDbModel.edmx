@@ -502,7 +502,7 @@
           <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityType Name="Artists">
+        <EntityType Name="Artist">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -566,7 +566,7 @@
           <NavigationProperty Name="Reviews" Relationship="Self.FK_Reviews_AspNetUsers" FromRole="AspNetUsers" ToRole="Reviews" />
           <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
         </EntityType>
-        <EntityType Name="Coutries">
+        <EntityType Name="Coutry">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -575,7 +575,7 @@
           <NavigationProperty Name="Artists" Relationship="Self.FK_Artists_Coutries" FromRole="Coutries" ToRole="Artists" />
           <NavigationProperty Name="Movies" Relationship="Self.MoviesCountries" FromRole="Coutries" ToRole="Movies" />
         </EntityType>
-        <EntityType Name="Genres">
+        <EntityType Name="Genre">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -583,7 +583,7 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Movies" Relationship="Self.MoviesGenres" FromRole="Genres" ToRole="Movies" />
         </EntityType>
-        <EntityType Name="Languages">
+        <EntityType Name="Language">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -591,7 +591,7 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Movies" Relationship="Self.FK_Movies_Languages" FromRole="Languages" ToRole="Movies" />
         </EntityType>
-        <EntityType Name="Movies">
+        <EntityType Name="Movie">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -610,7 +610,7 @@
           <NavigationProperty Name="Directors" Relationship="Self.MoviesDirectors" FromRole="Movies" ToRole="Artists" />
           <NavigationProperty Name="Genres" Relationship="Self.MoviesGenres" FromRole="Movies" ToRole="Genres" />
         </EntityType>
-        <EntityType Name="Ratings">
+        <EntityType Name="Rating">
           <Key>
             <PropertyRef Name="UserId" />
             <PropertyRef Name="MovieId" />
@@ -621,7 +621,7 @@
           <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_Ratings_AspNetUsers" FromRole="Ratings" ToRole="AspNetUsers" />
           <NavigationProperty Name="Movies" Relationship="Self.FK_Ratings_Movies" FromRole="Ratings" ToRole="Movies" />
         </EntityType>
-        <EntityType Name="Reviews">
+        <EntityType Name="Review">
           <Key>
             <PropertyRef Name="UserId" />
             <PropertyRef Name="MovieId" />
@@ -645,8 +645,8 @@
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Artists_Coutries">
-          <End Role="Coutries" Type="Self.Coutries" Multiplicity="1" />
-          <End Role="Artists" Type="Self.Artists" Multiplicity="*" />
+          <End Role="Coutries" Type="CinephileDbModel.Coutry" Multiplicity="1" />
+          <End Role="Artists" Type="CinephileDbModel.Artist" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Coutries">
               <PropertyRef Name="Id" />
@@ -686,7 +686,7 @@
         </Association>
         <Association Name="FK_Ratings_AspNetUsers">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
-          <End Role="Ratings" Type="Self.Ratings" Multiplicity="*" />
+          <End Role="Ratings" Type="CinephileDbModel.Rating" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AspNetUsers">
               <PropertyRef Name="Id" />
@@ -698,7 +698,7 @@
         </Association>
         <Association Name="FK_Reviews_AspNetUsers">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
-          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <End Role="Reviews" Type="CinephileDbModel.Review" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="AspNetUsers">
               <PropertyRef Name="Id" />
@@ -709,8 +709,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Movies_Languages">
-          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
-          <End Role="Movies" Type="Self.Movies" Multiplicity="*" />
+          <End Role="Languages" Type="CinephileDbModel.Language" Multiplicity="1" />
+          <End Role="Movies" Type="CinephileDbModel.Movie" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Languages">
               <PropertyRef Name="Id" />
@@ -721,8 +721,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Ratings_Movies">
-          <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
-          <End Role="Ratings" Type="Self.Ratings" Multiplicity="*" />
+          <End Role="Movies" Type="CinephileDbModel.Movie" Multiplicity="1" />
+          <End Role="Ratings" Type="CinephileDbModel.Rating" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Movies">
               <PropertyRef Name="Id" />
@@ -733,8 +733,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Reviews_Movies">
-          <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
-          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <End Role="Movies" Type="CinephileDbModel.Movie" Multiplicity="1" />
+          <End Role="Reviews" Type="CinephileDbModel.Review" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Movies">
               <PropertyRef Name="Id" />
@@ -749,34 +749,34 @@
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
         </Association>
         <Association Name="MoviesActors">
-          <End Role="Artists" Type="Self.Artists" Multiplicity="*" />
-          <End Role="Movies" Type="Self.Movies" Multiplicity="*" />
+          <End Role="Artists" Type="CinephileDbModel.Artist" Multiplicity="*" />
+          <End Role="Movies" Type="CinephileDbModel.Movie" Multiplicity="*" />
         </Association>
         <Association Name="MoviesCountries">
-          <End Role="Coutries" Type="Self.Coutries" Multiplicity="*" />
-          <End Role="Movies" Type="Self.Movies" Multiplicity="*" />
+          <End Role="Coutries" Type="CinephileDbModel.Coutry" Multiplicity="*" />
+          <End Role="Movies" Type="CinephileDbModel.Movie" Multiplicity="*" />
         </Association>
         <Association Name="MoviesDirectors">
-          <End Role="Artists" Type="Self.Artists" Multiplicity="*" />
-          <End Role="Movies" Type="Self.Movies" Multiplicity="*" />
+          <End Role="Artists" Type="CinephileDbModel.Artist" Multiplicity="*" />
+          <End Role="Movies" Type="CinephileDbModel.Movie" Multiplicity="*" />
         </Association>
         <Association Name="MoviesGenres">
-          <End Role="Genres" Type="Self.Genres" Multiplicity="*" />
-          <End Role="Movies" Type="Self.Movies" Multiplicity="*" />
+          <End Role="Genres" Type="CinephileDbModel.Genre" Multiplicity="*" />
+          <End Role="Movies" Type="CinephileDbModel.Movie" Multiplicity="*" />
         </Association>
         <EntityContainer Name="CinephileDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
-          <EntitySet Name="Artists" EntityType="Self.Artists" />
+          <EntitySet Name="Artists" EntityType="CinephileDbModel.Artist" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
           <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
           <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
-          <EntitySet Name="Coutries" EntityType="Self.Coutries" />
-          <EntitySet Name="Genres" EntityType="Self.Genres" />
-          <EntitySet Name="Languages" EntityType="Self.Languages" />
-          <EntitySet Name="Movies" EntityType="Self.Movies" />
-          <EntitySet Name="Ratings" EntityType="Self.Ratings" />
-          <EntitySet Name="Reviews" EntityType="Self.Reviews" />
+          <EntitySet Name="Coutries" EntityType="CinephileDbModel.Coutry" />
+          <EntitySet Name="Genres" EntityType="CinephileDbModel.Genre" />
+          <EntitySet Name="Languages" EntityType="CinephileDbModel.Language" />
+          <EntitySet Name="Movies" EntityType="CinephileDbModel.Movie" />
+          <EntitySet Name="Ratings" EntityType="CinephileDbModel.Rating" />
+          <EntitySet Name="Reviews" EntityType="CinephileDbModel.Review" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <AssociationSet Name="FK_Artists_Coutries" Association="Self.FK_Artists_Coutries">
             <End Role="Coutries" EntitySet="Coutries" />
@@ -848,7 +848,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Artists">
-            <EntityTypeMapping TypeName="CinephileDbModel.Artists">
+            <EntityTypeMapping TypeName="CinephileDbModel.Artist">
               <MappingFragment StoreEntitySet="Artists">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
@@ -904,7 +904,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Coutries">
-            <EntityTypeMapping TypeName="CinephileDbModel.Coutries">
+            <EntityTypeMapping TypeName="CinephileDbModel.Coutry">
               <MappingFragment StoreEntitySet="Coutries">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -912,7 +912,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Genres">
-            <EntityTypeMapping TypeName="CinephileDbModel.Genres">
+            <EntityTypeMapping TypeName="CinephileDbModel.Genre">
               <MappingFragment StoreEntitySet="Genres">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -920,7 +920,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Languages">
-            <EntityTypeMapping TypeName="CinephileDbModel.Languages">
+            <EntityTypeMapping TypeName="CinephileDbModel.Language">
               <MappingFragment StoreEntitySet="Languages">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -928,7 +928,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Movies">
-            <EntityTypeMapping TypeName="CinephileDbModel.Movies">
+            <EntityTypeMapping TypeName="CinephileDbModel.Movie">
               <MappingFragment StoreEntitySet="Movies">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -941,7 +941,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Ratings">
-            <EntityTypeMapping TypeName="CinephileDbModel.Ratings">
+            <EntityTypeMapping TypeName="CinephileDbModel.Rating">
               <MappingFragment StoreEntitySet="Ratings">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="MovieId" ColumnName="MovieId" />
@@ -950,7 +950,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Reviews">
-            <EntityTypeMapping TypeName="CinephileDbModel.Reviews">
+            <EntityTypeMapping TypeName="CinephileDbModel.Review">
               <MappingFragment StoreEntitySet="Reviews">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="MovieId" ColumnName="MovieId" />

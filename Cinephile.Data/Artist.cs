@@ -12,12 +12,12 @@ namespace Cinephile.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Artists
+    public partial class Artist
     {
-        public Artists()
+        public Artist()
         {
-            this.MoviesPlayedIn = new HashSet<Movies>();
-            this.MoviesDirected = new HashSet<Movies>();
+            this.MoviesPlayedIn = new HashSet<Movie>();
+            this.MoviesDirected = new HashSet<Movie>();
         }
     
         public System.Guid Id { get; set; }
@@ -26,8 +26,8 @@ namespace Cinephile.Data
         public int CounryId { get; set; }
         public string PicturePath { get; set; }
     
-        public virtual Coutries Coutries { get; set; }
-        public virtual ICollection<Movies> MoviesPlayedIn { get; set; }
-        public virtual ICollection<Movies> MoviesDirected { get; set; }
+        public virtual Coutry Coutries { get; set; }
+        public virtual ICollection<Movie> MoviesPlayedIn { get; set; }
+        public virtual ICollection<Movie> MoviesDirected { get; set; }
     }
 }

@@ -18,8 +18,8 @@ namespace Cinephile.Data
         {
             this.AspNetUserClaims = new HashSet<AspNetUserClaims>();
             this.AspNetUserLogins = new HashSet<AspNetUserLogins>();
-            this.Ratings = new HashSet<Ratings>();
-            this.Reviews = new HashSet<Reviews>();
+            this.Ratings = new HashSet<Rating>();
+            this.Reviews = new HashSet<Review>();
             this.AspNetRoles = new HashSet<AspNetRoles>();
         }
     
@@ -38,8 +38,8 @@ namespace Cinephile.Data
     
         public virtual ICollection<AspNetUserClaims> AspNetUserClaims { get; set; }
         public virtual ICollection<AspNetUserLogins> AspNetUserLogins { get; set; }
-        public virtual ICollection<Ratings> Ratings { get; set; }
-        public virtual ICollection<Reviews> Reviews { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
         public virtual ICollection<AspNetRoles> AspNetRoles { get; set; }
     }
 }

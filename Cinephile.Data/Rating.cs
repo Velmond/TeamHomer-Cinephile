@@ -12,16 +12,13 @@ namespace Cinephile.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Languages
+    public partial class Rating
     {
-        public Languages()
-        {
-            this.Movies = new HashSet<Movies>();
-        }
+        public string UserId { get; set; }
+        public System.Guid MovieId { get; set; }
+        public int RatingValue { get; set; }
     
-        public int Id { get; set; }
-        public string Name { get; set; }
-    
-        public virtual ICollection<Movies> Movies { get; set; }
+        public virtual AspNetUsers AspNetUsers { get; set; }
+        public virtual Movie Movies { get; set; }
     }
 }

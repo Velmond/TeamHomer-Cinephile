@@ -12,16 +12,16 @@ namespace Cinephile.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Movies
+    public partial class Movie
     {
-        public Movies()
+        public Movie()
         {
-            this.Ratings = new HashSet<Ratings>();
-            this.Reviews = new HashSet<Reviews>();
-            this.Actors = new HashSet<Artists>();
-            this.Coutries = new HashSet<Coutries>();
-            this.Directors = new HashSet<Artists>();
-            this.Genres = new HashSet<Genres>();
+            this.Ratings = new HashSet<Rating>();
+            this.Reviews = new HashSet<Review>();
+            this.Actors = new HashSet<Artist>();
+            this.Coutries = new HashSet<Coutry>();
+            this.Directors = new HashSet<Artist>();
+            this.Genres = new HashSet<Genre>();
         }
     
         public System.Guid Id { get; set; }
@@ -32,12 +32,12 @@ namespace Cinephile.Data
         public int LanguageId { get; set; }
         public string PosterPath { get; set; }
     
-        public virtual Languages Languages { get; set; }
-        public virtual ICollection<Ratings> Ratings { get; set; }
-        public virtual ICollection<Reviews> Reviews { get; set; }
-        public virtual ICollection<Artists> Actors { get; set; }
-        public virtual ICollection<Coutries> Coutries { get; set; }
-        public virtual ICollection<Artists> Directors { get; set; }
-        public virtual ICollection<Genres> Genres { get; set; }
+        public virtual Language Languages { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Artist> Actors { get; set; }
+        public virtual ICollection<Coutry> Coutries { get; set; }
+        public virtual ICollection<Artist> Directors { get; set; }
+        public virtual ICollection<Genre> Genres { get; set; }
     }
 }

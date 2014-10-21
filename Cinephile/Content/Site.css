@@ -32,13 +32,18 @@ input[type="select"] {
     .jumbotron {
         margin-top: 20px;
     }
+
     .body-content {
         padding: 0;
     }
 }
 
-.homePageMovieTitle {
-    position: absolute;
-    bottom: 2%;
-    left: 1%;
+.movie-poster-container {
+}
+
+.movie-poster {
+    width: 100%;
+}
+
+.movie-poster-title {
 }

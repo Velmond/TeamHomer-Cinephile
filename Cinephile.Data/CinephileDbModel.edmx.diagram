@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b37a5a40f915464e93c302bc812aa82a" Name="Diagram1">
+      <Diagram DiagramId="bda13b88db8f48749074a2a7d2e21ea3" Name="Diagram1">
         <EntityTypeShape EntityType="CinephileDbModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="CinephileDbModel.Artists" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinephileDbModel.Artist" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="CinephileDbModel.AspNetRoles" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CinephileDbModel.AspNetUserClaims" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CinephileDbModel.AspNetUserLogins" Width="1.5" PointX="7.5" PointY="12.625" IsExpanded="true" />
         <EntityTypeShape EntityType="CinephileDbModel.AspNetUsers" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="CinephileDbModel.Coutries" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="CinephileDbModel.Genres" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="CinephileDbModel.Languages" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CinephileDbModel.Movies" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CinephileDbModel.Ratings" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="CinephileDbModel.Reviews" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinephileDbModel.Coutry" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinephileDbModel.Genre" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinephileDbModel.Language" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinephileDbModel.Movie" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinephileDbModel.Rating" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinephileDbModel.Review" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CinephileDbModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="2" IsExpanded="true" />
         <AssociationConnector Association="CinephileDbModel.FK_Artists_Coutries" ManuallyRouted="false" />
         <AssociationConnector Association="CinephileDbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />

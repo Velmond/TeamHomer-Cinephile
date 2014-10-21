@@ -26,17 +26,17 @@ namespace Cinephile.Data
         }
     
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
-        public virtual DbSet<Artists> Artists { get; set; }
+        public virtual DbSet<Artist> Artists { get; set; }
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
-        public virtual DbSet<Coutries> Coutries { get; set; }
-        public virtual DbSet<Genres> Genres { get; set; }
-        public virtual DbSet<Languages> Languages { get; set; }
-        public virtual DbSet<Movies> Movies { get; set; }
-        public virtual DbSet<Ratings> Ratings { get; set; }
-        public virtual DbSet<Reviews> Reviews { get; set; }
+        public virtual DbSet<Coutry> Coutries { get; set; }
+        public virtual DbSet<Genre> Genres { get; set; }
+        public virtual DbSet<Language> Languages { get; set; }
+        public virtual DbSet<Movie> Movies { get; set; }
+        public virtual DbSet<Rating> Ratings { get; set; }
+        public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }
