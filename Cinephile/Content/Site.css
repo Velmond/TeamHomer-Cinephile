@@ -36,3 +36,9 @@ input[type="select"] {
         padding: 0;
     }
 }
+
+.homePageMovieTitle {
+    position: absolute;
+    bottom: 2%;
+    left: 1%;
+}

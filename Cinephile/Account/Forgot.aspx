@@ -1,6 +1,6 @@
-﻿<%@ Page Title="Forgot password" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Forgot.aspx.cs" Inherits="Cinephile.Account.ForgotPassword" Async="true" %>
+﻿<%@ Page Title="Forgot password" Language="C#" MasterPageFile="~/PublicMaster.Master" AutoEventWireup="true" CodeBehind="Forgot.aspx.cs" Inherits="Cinephile.Account.ForgotPassword" Async="true" %>
 
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+<asp:Content runat="server" ID="ForgotPasswordBodyContent" ContentPlaceHolderID="BodyContent">
     <h2><%: Title %>.</h2>
 
     <div class="row">
