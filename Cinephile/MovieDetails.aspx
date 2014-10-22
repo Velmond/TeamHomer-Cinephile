@@ -60,8 +60,8 @@
                     <SeparatorTemplate>, </SeparatorTemplate>
                 </asp:Repeater>
             </p>
-            <asp:GridView ID="GridViewActors" AllowPaging="true" AutoGenerateColumns="false"
-                AllowSorting="true" runat="server" OnSorting="GridViewActors_Sorting" ItemType="Cinephile.Data.Artist">
+            <asp:GridView ID="GridViewActors" AllowPaging="true" PageSize="3" AutoGenerateColumns="false"
+                AllowSorting="true" runat="server" OnPageIndexChanging="GridViewActors_PageIndexChanging" OnSorting="GridViewActors_Sorting" ItemType="Cinephile.Data.Artist">
                 <Columns>
                     <asp:BoundField DataField="FullName" HeaderText="Name" SortExpression="FullName" />
                     <%--<asp:ImageField DataImageUrlField="PicturePath"></asp:ImageField>--%>

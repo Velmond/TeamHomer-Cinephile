@@ -1,6 +1,7 @@
 ﻿using Cinephile.Data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -108,8 +109,42 @@ namespace Cinephile
             }
         }
 
+        private string ConvertSortDirectionToSql(SortDirection sortDirection)
+        {
+            string newSortDirection = String.Empty;
+
+            switch (sortDirection)
+            {
+                case SortDirection.Ascending:
+                    newSortDirection = "ASC";
+                    break;
+
+                case SortDirection.Descending:
+                    newSortDirection = "DESC";
+                    break;
+            }
+
+            return newSortDirection;
+        }
+
         protected void GridViewActors_Sorting(object sender, GridViewSortEventArgs e)
         {
+            DataTable dataTable = this.GridViewActors.DataSource as DataTable;
+
+            if (dataTable != null)
+            {
+                DataView dataView = new DataView(dataTable);
+                dataView.Sort = e.SortExpression + " " + ConvertSortDirectionToSql(e.SortDirection);
+
+                this.GridViewActors.DataSource = dataView;
+                this.GridViewActors.DataBind();
+            }
+        }
+
+        protected void GridViewActors_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            this.GridViewActors.PageIndex = e.NewPageIndex;
+            this.GridViewActors.DataBind();
         }
     }
 }
