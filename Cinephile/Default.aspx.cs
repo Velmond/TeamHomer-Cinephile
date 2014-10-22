@@ -13,7 +13,7 @@ namespace Cinephile
         protected void Page_Load(object sender, EventArgs e)
         {
             CinephileDbEntities dbContext = new CinephileDbEntities();
-            var homepageMovies = dbContext.Movies.OrderBy(m => new Guid()).Take(3).ToList();
+            var homepageMovies = dbContext.Movies.OrderBy(m => Guid.NewGuid()).Take(3).ToList();
 
             //var velmond = dbContext.AspNetUsers.FirstOrDefault(u => u.Email == "velmond@abv.bg");
             //var adminRole = new AspNetRole() { Name = "admin" };

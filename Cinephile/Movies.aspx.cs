@@ -28,13 +28,13 @@ namespace Cinephile
                 {
                     MoviesListView.DataSource = db.Movies
                         .Where(m => m.Title.ToLower().IndexOf(searched.ToLower()) >= 0)
-                        .OrderBy(m => m.Title)
+                        .OrderBy(m => m.Title.ToLower())
                         .ToList();
                 }
                 else
                 {
                     MoviesListView.DataSource = db.Movies
-                        .OrderBy(m => m.Title)
+                        .OrderBy(m => m.Title.ToLower())
                         .ToList();
                 }
 
@@ -62,7 +62,7 @@ namespace Cinephile
             SearchBox.Text = searched;
 
             var adminMovies = db.Movies
-                .OrderBy(m => m.Title)
+                .OrderBy(m => m.Title.ToLower())
                 .ToList()
                 .Where(m => m.Title.ToLower().IndexOf(searched) >= 0)
                 .Skip((pageNum - 1) * ItemsPerPage)
