@@ -16,6 +16,7 @@ namespace Cinephile.Data
     {
         public AspNetRole()
         {
+            this.Id = Guid.NewGuid().ToString();
             this.AspNetUsers = new HashSet<AspNetUser>();
         }
     

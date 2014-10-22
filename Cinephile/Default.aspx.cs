@@ -15,6 +15,12 @@ namespace Cinephile
             CinephileDbEntities dbContext = new CinephileDbEntities();
             var homepageMovies = dbContext.Movies.OrderBy(m => new Guid()).Take(3).ToList();
 
+            //var velmond = dbContext.AspNetUsers.FirstOrDefault(u => u.Email == "velmond@abv.bg");
+            //var adminRole = new AspNetRole() { Name = "admin" };
+            //dbContext.SaveChanges();
+            //velmond.AspNetRoles.Add(adminRole);
+            //dbContext.SaveChanges();
+
             //List<Movie> homepageMovies = new List<Movie>() { 
             //    new Movie()
             //    {
