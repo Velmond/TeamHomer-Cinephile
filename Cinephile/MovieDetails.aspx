@@ -63,8 +63,8 @@
             <asp:GridView ID="GridViewActors" AllowPaging="true" PageSize="3" AutoGenerateColumns="false"
                 AllowSorting="true" runat="server" OnPageIndexChanging="GridViewActors_PageIndexChanging" OnSorting="GridViewActors_Sorting" ItemType="Cinephile.Data.Artist">
                 <Columns>
+                    <asp:ImageField DataImageUrlField="PicturePath"></asp:ImageField>
                     <asp:BoundField DataField="FullName" HeaderText="Name" SortExpression="FullName" />
-                    <%--<asp:ImageField DataImageUrlField="PicturePath"></asp:ImageField>--%>
                 </Columns>
             </asp:GridView>
         </div>

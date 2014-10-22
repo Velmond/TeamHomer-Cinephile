@@ -1,6 +1,7 @@
 ﻿using Cinephile.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Web;
@@ -77,7 +78,8 @@ namespace Cinephile
             }
             this.RepeaterGenres.DataSource = movie.Genres;
             this.RepeaterDirectors.DataSource = movie.Directors;
-            this.GridViewActors.DataSource = movie.Actors.ToList();
+            var dt = this.ConvertToDataTable(movie.Actors.ToList());
+            this.GridViewActors.DataSource = dt;
             
             Page.DataBind();
         }
@@ -109,23 +111,30 @@ namespace Cinephile
             }
         }
 
-        private string ConvertSortDirectionToSql(SortDirection sortDirection)
+        private string GetSortDirection(string column)
         {
-            string newSortDirection = String.Empty;
+            string sortDirection = "ASC";
 
-            switch (sortDirection)
+            string sortExpression = ViewState["SortExpression"] as string;
+
+            if (sortExpression != null)
             {
-                case SortDirection.Ascending:
-                    newSortDirection = "ASC";
-                    break;
-
-                case SortDirection.Descending:
-                    newSortDirection = "DESC";
-                    break;
+                if (sortExpression == column)
+                {
+                    string lastDirection = ViewState["SortDirection"] as string;
+                    if ((lastDirection != null) && (lastDirection == "ASC"))
+                    {
+                        sortDirection = "DESC";
+                    }
+                }
             }
 
-            return newSortDirection;
+            ViewState["SortDirection"] = sortDirection;
+            ViewState["SortExpression"] = column;
+
+            return sortDirection;
         }
+
 
         protected void GridViewActors_Sorting(object sender, GridViewSortEventArgs e)
         {
@@ -134,7 +143,7 @@ namespace Cinephile
             if (dataTable != null)
             {
                 DataView dataView = new DataView(dataTable);
-                dataView.Sort = e.SortExpression + " " + ConvertSortDirectionToSql(e.SortDirection);
+                dataView.Sort = e.SortExpression + " " + GetSortDirection(e.SortExpression);
 
                 this.GridViewActors.DataSource = dataView;
                 this.GridViewActors.DataBind();
@@ -145,6 +154,23 @@ namespace Cinephile
         {
             this.GridViewActors.PageIndex = e.NewPageIndex;
             this.GridViewActors.DataBind();
+        }
+
+        private DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection properties =
+               TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
         }
     }
 }
