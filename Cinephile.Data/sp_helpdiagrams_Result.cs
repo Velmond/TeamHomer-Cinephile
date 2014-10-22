@@ -10,18 +10,13 @@
 namespace Cinephile.Data
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class AspNetRoles
+    public partial class sp_helpdiagrams_Result
     {
-        public AspNetRoles()
-        {
-            this.AspNetUsers = new HashSet<AspNetUsers>();
-        }
-    
-        public string Id { get; set; }
+        public string Database { get; set; }
         public string Name { get; set; }
-    
-        public virtual ICollection<AspNetUsers> AspNetUsers { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

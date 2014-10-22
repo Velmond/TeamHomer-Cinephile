@@ -18,7 +18,7 @@ namespace Cinephile.Data
         public System.Guid MovieId { get; set; }
         public int RatingValue { get; set; }
     
-        public virtual AspNetUsers AspNetUsers { get; set; }
-        public virtual Movie Movies { get; set; }
+        public virtual AspNetUser AspNetUser { get; set; }
+        public virtual Movie Movy { get; set; }
     }
 }

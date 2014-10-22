@@ -10,20 +10,10 @@
 namespace Cinephile.Data
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Coutry
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public Coutry()
-        {
-            this.Artists = new HashSet<Artist>();
-            this.Movies = new HashSet<Movie>();
-        }
-    
-        public int Id { get; set; }
-        public string Name { get; set; }
-    
-        public virtual ICollection<Artist> Artists { get; set; }
-        public virtual ICollection<Movie> Movies { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

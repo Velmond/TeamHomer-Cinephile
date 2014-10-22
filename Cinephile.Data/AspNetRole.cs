@@ -12,12 +12,17 @@ namespace Cinephile.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class AspNetUserLogins
+    public partial class AspNetRole
     {
-        public string LoginProvider { get; set; }
-        public string ProviderKey { get; set; }
-        public string UserId { get; set; }
+        public AspNetRole()
+        {
+            this.Id = Guid.NewGuid().ToString();
+            this.AspNetUsers = new HashSet<AspNetUser>();
+        }
     
-        public virtual AspNetUsers AspNetUsers { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+    
+        public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
     }
 }
