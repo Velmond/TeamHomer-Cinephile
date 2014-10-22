@@ -9,9 +9,12 @@
             <div class="col-md-4 pull-right home-page-search-container">
                 <asp:Panel runat="server" DefaultButton="SearchSubmitBtn">
                     <asp:TextBox runat="server" ID="HomeSearchBox"
-                        CssClass="form-control" placeholder="Search for a movie...">
+                        CssClass="form-control"
+                        placeholder="Search for a movie...">
                     </asp:TextBox>
-                    <asp:Button ID="SearchSubmitBtn" runat="server" Style="display: none" OnClick="SearchSubmitBtn_Click" />
+                    <asp:Button ID="SearchSubmitBtn" runat="server"
+                        Style="display: none"
+                        OnClick="SearchSubmitBtn_Click" />
                 </asp:Panel>
             </div>
         </div>
