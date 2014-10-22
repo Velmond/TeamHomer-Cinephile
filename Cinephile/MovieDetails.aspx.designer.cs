@@ -49,6 +49,24 @@ namespace Cinephile {
         protected global::System.Web.UI.WebControls.Label StoryLine;
         
         /// <summary>
+        /// Genres control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Genres;
+        
+        /// <summary>
+        /// RepeaterGenres control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterGenres;
+        
+        /// <summary>
         /// ReleaseDate control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,24 @@ namespace Cinephile {
         protected global::System.Web.UI.WebControls.Label Language;
         
         /// <summary>
+        /// Countries control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Countries;
+        
+        /// <summary>
+        /// RepeaterCountries control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterCountries;
+        
+        /// <summary>
         /// Length control.
         /// </summary>
         /// <remarks>
@@ -74,5 +110,23 @@ namespace Cinephile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Length;
+        
+        /// <summary>
+        /// RepeaterDirectors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterDirectors;
+        
+        /// <summary>
+        /// GridViewActors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewActors;
     }
 }
