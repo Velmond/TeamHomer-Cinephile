@@ -16,10 +16,11 @@ namespace Cinephile.Data
     {
         public Movie()
         {
+            this.Id = Guid.NewGuid();
             this.Ratings = new HashSet<Rating>();
             this.Reviews = new HashSet<Review>();
             this.Actors = new HashSet<Artist>();
-            this.Coutries = new HashSet<Coutry>();
+            this.Countries = new HashSet<Country>();
             this.Directors = new HashSet<Artist>();
             this.Genres = new HashSet<Genre>();
         }
@@ -32,11 +33,11 @@ namespace Cinephile.Data
         public int LanguageId { get; set; }
         public string PosterPath { get; set; }
     
-        public virtual Language Languages { get; set; }
+        public virtual Language Language { get; set; }
         public virtual ICollection<Rating> Ratings { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
         public virtual ICollection<Artist> Actors { get; set; }
-        public virtual ICollection<Coutry> Coutries { get; set; }
+        public virtual ICollection<Country> Countries { get; set; }
         public virtual ICollection<Artist> Directors { get; set; }
         public virtual ICollection<Genre> Genres { get; set; }
     }

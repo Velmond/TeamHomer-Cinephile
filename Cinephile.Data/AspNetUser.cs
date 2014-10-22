@@ -12,15 +12,15 @@ namespace Cinephile.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class AspNetUsers
+    public partial class AspNetUser
     {
-        public AspNetUsers()
+        public AspNetUser()
         {
-            this.AspNetUserClaims = new HashSet<AspNetUserClaims>();
-            this.AspNetUserLogins = new HashSet<AspNetUserLogins>();
+            this.AspNetUserClaims = new HashSet<AspNetUserClaim>();
+            this.AspNetUserLogins = new HashSet<AspNetUserLogin>();
             this.Ratings = new HashSet<Rating>();
             this.Reviews = new HashSet<Review>();
-            this.AspNetRoles = new HashSet<AspNetRoles>();
+            this.AspNetRoles = new HashSet<AspNetRole>();
         }
     
         public string Id { get; set; }
@@ -36,10 +36,10 @@ namespace Cinephile.Data
         public int AccessFailedCount { get; set; }
         public string UserName { get; set; }
     
-        public virtual ICollection<AspNetUserClaims> AspNetUserClaims { get; set; }
-        public virtual ICollection<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual ICollection<Rating> Ratings { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
-        public virtual ICollection<AspNetRoles> AspNetRoles { get; set; }
+        public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
     }
 }

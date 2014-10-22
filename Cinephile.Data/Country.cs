@@ -12,15 +12,18 @@ namespace Cinephile.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Review
+    public partial class Country
     {
-        public string UserId { get; set; }
-        public System.Guid MovieId { get; set; }
-        public string Title { get; set; }
-        public string Body { get; set; }
-        public System.DateTime DatePosted { get; set; }
+        public Country()
+        {
+            this.Artists = new HashSet<Artist>();
+            this.Movies = new HashSet<Movie>();
+        }
     
-        public virtual AspNetUser AspNetUser { get; set; }
-        public virtual Movie Movy { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+    
+        public virtual ICollection<Artist> Artists { get; set; }
+        public virtual ICollection<Movie> Movies { get; set; }
     }
 }

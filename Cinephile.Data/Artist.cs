@@ -16,6 +16,7 @@ namespace Cinephile.Data
     {
         public Artist()
         {
+            this.Id = Guid.NewGuid();
             this.MoviesPlayedIn = new HashSet<Movie>();
             this.MoviesDirected = new HashSet<Movie>();
         }
@@ -26,7 +27,7 @@ namespace Cinephile.Data
         public int CounryId { get; set; }
         public string PicturePath { get; set; }
     
-        public virtual Coutry Coutries { get; set; }
+        public virtual Country Country { get; set; }
         public virtual ICollection<Movie> MoviesPlayedIn { get; set; }
         public virtual ICollection<Movie> MoviesDirected { get; set; }
     }

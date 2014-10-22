@@ -12,26 +12,26 @@ namespace Cinephile
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //CinephileDbEntities dbContext = new CinephileDbEntities();
-            //var homepageMovies = dbContext.Movies.OrderBy(m => new Guid()).Take(3).ToList();
+            CinephileDbEntities dbContext = new CinephileDbEntities();
+            var homepageMovies = dbContext.Movies.OrderBy(m => new Guid()).Take(3).ToList();
 
-            List<Movie> homepageMovies = new List<Movie>() { 
-                new Movie()
-                {
-                    Title = "Gone girl",
-                    PosterPath = "~/Images/gone-girl-poster.jpg"
-                },
-                new Movie()
-                {
-                    Title = "Airplane",
-                    PosterPath = "~/Images/airplane-poster.png"
-                },
-                new Movie()
-                {
-                    Title = "The Dark Knight",
-                    PosterPath = "~/Images/the-dark-knight-poster.jpg"
-                }
-            };
+            //List<Movie> homepageMovies = new List<Movie>() { 
+            //    new Movie()
+            //    {
+            //        Title = "Gone girl",
+            //        PosterPath = "~/Images/gone-girl-poster.jpg"
+            //    },
+            //    new Movie()
+            //    {
+            //        Title = "Airplane",
+            //        PosterPath = "~/Images/airplane-poster.png"
+            //    },
+            //    new Movie()
+            //    {
+            //        Title = "The Dark Knight",
+            //        PosterPath = "~/Images/the-dark-knight-poster.jpg"
+            //    }
+            //};
 
             HomeMoviesRepeater.DataSource = homepageMovies;
             HomeMoviesRepeater.DataBind();

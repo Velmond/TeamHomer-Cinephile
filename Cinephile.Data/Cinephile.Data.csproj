@@ -51,16 +51,16 @@
     <Compile Include="Artist.cs">
       <DependentUpon>CinephileDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AspNetRoles.cs">
+    <Compile Include="AspNetRole.cs">
       <DependentUpon>CinephileDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AspNetUserClaims.cs">
+    <Compile Include="AspNetUser.cs">
       <DependentUpon>CinephileDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AspNetUserLogins.cs">
+    <Compile Include="AspNetUserClaim.cs">
       <DependentUpon>CinephileDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AspNetUsers.cs">
+    <Compile Include="AspNetUserLogin.cs">
       <DependentUpon>CinephileDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CinephileDbModel.Context.cs">
@@ -78,7 +78,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CinephileDbModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Coutry.cs">
+    <Compile Include="Country.cs">
       <DependentUpon>CinephileDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="C__MigrationHistory.cs">
@@ -100,18 +100,22 @@
     <Compile Include="Review.cs">
       <DependentUpon>CinephileDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>CinephileDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>CinephileDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>CinephileDbModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="CinephileDbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CinephileDbModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="CinephileDbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CinephileDbModel.edmx</DependentUpon>
