@@ -129,8 +129,11 @@
 
         <ItemTemplate>
             <div class="col-md-3 movie-poster-container">
+                <% if(HttpContext.Current.User.Identity.IsAuthenticated && HttpContext.Current.User.IsInRole("admin"))
+                   { %>
                 <asp:LinkButton ID="SelectButton" runat="server" CommandName="Select" Text="Select"
                     CssClass="btn btn-default" />
+                <% } %>
                 <asp:ImageButton runat="server" ID="MovieDetailsImageBtn"
                     ImageUrl="<%#: Item.PosterPath %>"
                     CssClass="movie-poster"
@@ -143,8 +146,11 @@
 
         <SelectedItemTemplate>
             <div class="col-md-3 movie-poster-container-selected">
+                <% if(HttpContext.Current.User.Identity.IsAuthenticated && HttpContext.Current.User.IsInRole("admin"))
+                   { %>
                 <asp:LinkButton ID="SelectButton" runat="server" CommandName="Select" Text="Select"
                     CssClass="btn btn-default" />
+                <% } %>
                 <asp:ImageButton runat="server" ID="MovieDetailsImageBtn"
                     ImageUrl="<%#: Item.PosterPath %>"
                     CssClass="movie-poster-selected"

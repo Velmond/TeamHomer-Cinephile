@@ -357,6 +357,12 @@
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="ArtistDetails.aspx.cs">
+      <DependentUpon>ArtistDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistDetails.aspx.designer.cs">
+      <DependentUpon>ArtistDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TextBox.cs" />
     <Compile Include="Movies.aspx.cs">
       <DependentUpon>Movies.aspx</DependentUpon>

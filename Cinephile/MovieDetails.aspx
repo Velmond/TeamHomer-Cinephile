@@ -76,7 +76,7 @@
                                 <Columns>
                                     <asp:ImageField DataImageUrlField="PicturePath"></asp:ImageField>
                                     <asp:HyperLinkField DataTextField="FullName" HeaderText="Name"
-                                        SortExpression="FullName" DataNavigateUrlFields="PicturePath" />
+                                        SortExpression="FullName" DataNavigateUrlFields='Id' DataNavigateUrlFormatString="~\ArtistDetails?id={0}" />
                                     <asp:TemplateField HeaderText="Country" SortExpression="CounryId">
                                         <ItemTemplate>
                                             <%#: Eval("Country.Name")%>
