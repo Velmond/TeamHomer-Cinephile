@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ArtistDetails.aspx" />
+    <Content Include="Images\star-empty.png" />
     <Content Include="Images\star-half.png" />
     <Content Include="Images\star.png" />
     <Content Include="Movies.aspx" />
