@@ -31,32 +31,7 @@
                     </Fields>
                 </asp:DataPager>
             </div>
-            <div class="col-md-4">
-                <div class="input-group">
-                    <div class="col-md-5">
-                        <asp:DropDownList ID="SortList" runat="server"
-                            CssClass="form-control">
-                            <asp:ListItem Selected="true">UserName</asp:ListItem>
-                            <asp:ListItem>Email</asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
-                    <div class="col-md-5">
-                        <asp:DropDownList ID="SortDirectionList" runat="server"
-                            CssClass="form-control">
-                            <asp:ListItem Value="ASC" Text="Ascending" Selected="True" />
-                            <asp:ListItem Value="DESC" Text="Descending" />
-                        </asp:DropDownList>
-                    </div>
-                    <div class="col-md-2">
-                        <asp:Button ID="SortButton"
-                            Text="Sort"
-                            OnClick="SortButton_Click"
-                            runat="server"
-                            CssClass="btn btn-default" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 home-page-search-container">
+            <div class="col-md-4 pull-right home-page-search-container">
                 <asp:Panel runat="server" DefaultButton="SearchSubmitBtn" CssClass="input-group">
                     <asp:TextBox runat="server" ID="SearchBox"
                         CssClass="form-control"
@@ -72,6 +47,36 @@
                         Style="display: none"
                         OnClick="SearchSubmitBtn_Click" />
                 </asp:Panel>
+            </div>
+        </div>
+        <div class="row">
+            <p></p>
+        </div>
+        <div class="row">
+            <div class="input-group col-md-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="col-md-4">
+                        <asp:DropDownList ID="SortList" runat="server"
+                            CssClass="form-control">
+                            <asp:ListItem Selected="true">UserName</asp:ListItem>
+                            <asp:ListItem>Email</asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:DropDownList ID="SortDirectionList" runat="server"
+                            CssClass="form-control">
+                            <asp:ListItem Value="ASC" Text="Ascending" Selected="True" />
+                            <asp:ListItem Value="DESC" Text="Descending" />
+                        </asp:DropDownList>
+                    </div>
+                    <asp:Button ID="Button1"
+                        Text="Sort"
+                        OnClick="SortButton_Click"
+                        runat="server"
+                        CssClass="col-md-4 btn btn-default" />
+                </div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </div>
@@ -134,6 +139,12 @@
                         <td><%# Item.UserName %></td>
                         <td><%# Item.Email %></td>
                         <td><%# Item.PhoneNumber %></td>
+                        <td>
+                            <asp:LinkButton ID="SelectButton" runat="server"
+                                Enabled="false" 
+                                CommandName="Select" Text="Select"
+                                CssClass="btn btn-default" />
+                        </td>
                     </tr>
                 </SelectedItemTemplate>
             </asp:ListView>

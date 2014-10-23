@@ -22,33 +22,6 @@ namespace Cinephile {
         protected global::System.Web.UI.WebControls.DataPager ListViewDataPager;
         
         /// <summary>
-        /// SortList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SortList;
-        
-        /// <summary>
-        /// SortDirectionList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SortDirectionList;
-        
-        /// <summary>
-        /// SortButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SortButton;
-        
-        /// <summary>
         /// DeleteButton control.
         /// </summary>
         /// <remarks>
@@ -101,6 +74,33 @@ namespace Cinephile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SearchSubmitBtn;
+        
+        /// <summary>
+        /// SortList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList SortList;
+        
+        /// <summary>
+        /// SortDirectionList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList SortDirectionList;
+        
+        /// <summary>
+        /// SortButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SortButton;
         
         /// <summary>
         /// Message control.
