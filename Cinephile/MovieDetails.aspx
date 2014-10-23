@@ -6,7 +6,8 @@
         <div class="col-md-9">
             <div class="row">
                 <h1 class="text-center col-md-12 page-header">
-                    <asp:Label Text="" ID="PageTitle" runat="server" /></h1>
+                    <asp:Label Text="" ID="PageTitle" runat="server" />
+                </h1>
             </div>
             <div class="row text-center">
                 <asp:Label Text="" ID="Rating" CssClass="col-md-12" runat="server" />
@@ -40,9 +41,8 @@
                     <li class="list-group-item">
                         <asp:Label Text="" ID="Countries" CssClass="label label-default" runat="server" />
                         <asp:Repeater ID="RepeaterCountries" runat="server" ItemType="Cinephile.Data.Country">
-                            <ItemTemplate>
-                                <%#: Item.Name %>
-                            </ItemTemplate>
+                            <ItemTemplate><%#: Item.Name %></ItemTemplate>
+                            <SeparatorTemplate>, </SeparatorTemplate>
                         </asp:Repeater>
                     </li>
                     <li class="list-group-item">
@@ -52,21 +52,43 @@
                 </ul>
             </div>
         </div>
-        <div class="md-9">
-            <p class="col-md-12">
-                by:
-                <asp:Repeater ID="RepeaterDirectors" runat="server" ItemType="Cinephile.Data.Artist">
-                    <ItemTemplate><strong><%#: Item.FullName  %></strong></ItemTemplate>
-                    <SeparatorTemplate>, </SeparatorTemplate>
-                </asp:Repeater>
-            </p>
-            <asp:GridView ID="GridViewActors" AllowPaging="true" PageSize="3" AutoGenerateColumns="false"
-                AllowSorting="true" runat="server" OnPageIndexChanging="GridViewActors_PageIndexChanging" OnSorting="GridViewActors_Sorting" ItemType="Cinephile.Data.Artist">
-                <Columns>
-                    <asp:ImageField DataImageUrlField="PicturePath"></asp:ImageField>
-                    <asp:BoundField DataField="FullName" HeaderText="Name" SortExpression="FullName" />
-                </Columns>
-            </asp:GridView>
+
+        <div class="col-md-5">
+            <div class="row">
+                <p class="col-md-12">
+                    by:
+                    <asp:Repeater ID="RepeaterDirectors" runat="server" ItemType="Cinephile.Data.Artist">
+                        <ItemTemplate><strong><%#: Item.FullName  %></strong></ItemTemplate>
+                        <SeparatorTemplate>, </SeparatorTemplate>
+                    </asp:Repeater>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h1 class="panel-title gold"><strong>Cast</strong></h1>
+                        </div>
+                        <div class="panel-body">
+                            <asp:GridView ID="GridViewActors" AllowPaging="true" PageSize="3" AutoGenerateColumns="false"
+                                AllowSorting="true" runat="server" OnPageIndexChanging="GridViewActors_PageIndexChanging"
+                                OnSorting="GridViewActors_Sorting" GridLines="None" CellPadding="2" >
+                                <Columns>                                   
+                                    <asp:ImageField DataImageUrlField="PicturePath"></asp:ImageField>
+                                    <asp:HyperLinkField DataTextField="FullName" HeaderText="Name"
+                                         SortExpression="FullName" DataNavigateUrlFields="PicturePath" />
+                                    <asp:TemplateField HeaderText="Country" SortExpression="CounryId">
+                                        <ItemTemplate>
+                                            <%# Eval("Country.Name")%>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="BirthDate" DataFormatString="{0:d}" HeaderText="Born" SortExpression="BirthDate" />
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>
