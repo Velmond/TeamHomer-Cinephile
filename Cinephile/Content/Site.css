@@ -123,5 +123,9 @@ input[type="select"] {
     color: #9F8225;
 }
 
+.row.margin-top {
+    margin-top: 20px;
+}
+
 
 

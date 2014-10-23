@@ -22,6 +22,15 @@ namespace Cinephile {
         protected global::System.Web.UI.WebControls.Image ArtistImage;
         
         /// <summary>
+        /// HeaderArtistName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label HeaderArtistName;
+        
+        /// <summary>
         /// LabelArtistName control.
         /// </summary>
         /// <remarks>
@@ -76,21 +85,21 @@ namespace Cinephile {
         protected global::System.Web.UI.WebControls.Label ArtistCountry;
         
         /// <summary>
-        /// HeaderArtistName control.
+        /// GridViewMovies control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label HeaderArtistName;
+        protected global::System.Web.UI.WebControls.GridView GridViewMovies;
         
         /// <summary>
-        /// MoviesListView control.
+        /// GridViewMoviesDirector control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView MoviesListView;
+        protected global::System.Web.UI.WebControls.GridView GridViewMoviesDirector;
     }
 }

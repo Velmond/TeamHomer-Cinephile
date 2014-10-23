@@ -33,9 +33,21 @@ namespace Cinephile
             this.ArtistBirthDate.Text = string.Format("{0:dd MMMMMMMMM yyyy}", artist.BirthDate.Value);
             this.ArtistCountry.Text = artist.Country.Name;
 
-            this.MoviesListView.DataSource = artist.MoviesPlayedIn;
+            //this.MoviesListView.DataSource = artist.MoviesPlayedIn;
+            this.GridViewMovies.DataSource = artist.MoviesPlayedIn.ToList();
+            this.GridViewMoviesDirector.DataSource = artist.MoviesDirected.ToList();
 
             this.DataBind();
+        }
+
+        protected void GridViewMovies_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
+
+        protected void GridViewMovies_Sorting(object sender, GridViewSortEventArgs e)
+        {
+
         }
     }
 }
