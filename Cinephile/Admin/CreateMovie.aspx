@@ -113,5 +113,4 @@
             </div>
         </div>
     </div>
-    <h2>Create movie page.</h2>
 </asp:Content>
