@@ -79,7 +79,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
+            <footer class="text-center">
                 <p>&copy; 2014 - Telerik Academy - Team Homer</p>
             </footer>
         </div>

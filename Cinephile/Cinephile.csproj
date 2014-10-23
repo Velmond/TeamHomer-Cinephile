@@ -147,6 +147,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ArtistDetails.aspx" />
     <Content Include="Images\star-half.png" />
     <Content Include="Images\star.png" />
     <Content Include="Movies.aspx" />
@@ -347,6 +348,13 @@
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="ArtistDetails.aspx.cs">
+      <DependentUpon>ArtistDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistDetails.aspx.designer.cs">
+      <DependentUpon>ArtistDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Movies.aspx.cs">
       <DependentUpon>Movies.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
