@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
 
 namespace Cinephile
 {
@@ -148,6 +149,16 @@ namespace Cinephile
                 this.GridViewActors.DataSource = dataView;
                 this.GridViewActors.DataBind();
             }
+        }
+
+        protected bool HasReviewed()
+        {
+            CinephileDbEntities db = new CinephileDbEntities();            
+            var movieId = Request.Params["Id"];
+            var userId = Page.User.Identity.GetUserId();
+
+            var result = db.Reviews.Any(r => r.MovieId.ToString() == movieId && r.UserId == userId);
+            return result;
         }
 
         protected string GetUsername(Review item)

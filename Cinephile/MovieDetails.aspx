@@ -141,10 +141,10 @@
                                 </LayoutTemplate>
                             </asp:ListView>
                         </div>                        
-                        <% if (HttpContext.Current.User.Identity.IsAuthenticated)
+                        <% if (HttpContext.Current.User.Identity.IsAuthenticated && HasReviewed() == false)
 	                    { %>
                         <div class="panel-footer text-center">
-                            <asp:Button Text="Add Review" CssClass="btn btn-warning" PostBackUrl='<%# "~/ReviewMovie.aspx/id=" + Request.Params["id"] %>' runat="server" />
+                            <asp:Button Text="Add Review" CssClass="btn btn-warning" PostBackUrl='<%# "~/ReviewMovie.aspx?id=" + Request.Params["id"] %>' runat="server" />
                         </div>
 		                <%    
 	                    } %>

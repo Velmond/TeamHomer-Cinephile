@@ -13,12 +13,48 @@ namespace Cinephile {
     public partial class ReviewMovie {
         
         /// <summary>
-        /// ReviewTitle control.
+        /// MovieName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Cinephile.Controls.TextBox ReviewTitle;
+        protected global::System.Web.UI.WebControls.Label MovieName;
+        
+        /// <summary>
+        /// UserTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Cinephile.Controls.TextBox UserTitle;
+        
+        /// <summary>
+        /// UserReview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Cinephile.Controls.TextBox UserReview;
+        
+        /// <summary>
+        /// DropDownListRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListRating;
+        
+        /// <summary>
+        /// ButtonSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonSubmit;
     }
 }
