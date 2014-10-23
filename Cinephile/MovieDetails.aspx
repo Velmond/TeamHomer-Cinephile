@@ -99,57 +99,57 @@
                         </div>
                         <div class="panel-body">
                             <asp:ListView ID="ListViewReviews" runat="server"
-             DataKeyNames="UserId,MovieId" DataSourceID="EntityDataSourceReviews" ItemType="Cinephile.Data.Review">   
-            <EmptyDataTemplate>
-                <span class="alert alert-warning">No reviews for this movie.</span>
-            </EmptyDataTemplate>
-            <ItemTemplate>
-                UserId:
-                <asp:Label Text='<%#:Eval("UserId") %>' runat="server" />
-                <span style="">
-                    Title:
-                <asp:Label ID="TitleLabel" runat="server" Text='<%# Eval("Title") %>' />
-                    <br />
-                    Body:
-                <asp:Label ID="BodyLabel" runat="server" Text='<%# Eval("Body") %>' />
-                    <br />
-                    DatePosted:
-                <asp:Label ID="DatePostedLabel" runat="server" Text='<%# Eval("DatePosted") %>' />
-                    <br />
-                    AspNetUser:
-                <asp:Label ID="AspNetUserLabel" runat="server" Text='<%# Item.AspNetUser == null %>' />
-                    <br />
-                    <br />
-                </span>
-            </ItemTemplate>
-            <LayoutTemplate>
-                <div id="itemPlaceholderContainer" runat="server" style="">
-                    <span runat="server" id="itemPlaceholder" />
-                </div>
-                <div style="">
-                    <asp:DataPager PageSize="1" ID="DataPagerReviews" runat="server">
-                        <Fields>
-                            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="False" ShowNextPageButton="False" ShowPreviousPageButton="True" />
-                            <asp:NumericPagerField />
-                            <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="False" ShowNextPageButton="True" ShowPreviousPageButton="False" />
-                        </Fields>
-                    </asp:DataPager>
-                </div>
-            </LayoutTemplate>            
-        </asp:ListView>
+                                DataKeyNames="UserId,MovieId" DataSourceID="EntityDataSourceReviews"
+                                ItemType="Cinephile.Data.Review">
+                                <EmptyDataTemplate>
+                                    <span class="alert alert-warning">No reviews for this movie.</span>
+                                </EmptyDataTemplate>
+                                <ItemTemplate>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading text-center">
+                                            <h4>
+                                                <strong>
+                                                <asp:Label ID="TitleLabel" CssClass="align-center" runat="server" Text='<%#: Item.Title %>' />
+                                            </strong>
+                                            </h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <asp:Label ID="BodyLabel" runat="server" Text='<%#: Item.Body %>' />
+                                        </div>
+                                        <div class="panel-footer">
+                                            by: <strong>
+                                                <asp:Label ID="AspNetUserLabel" runat="server" Text='<%# GetUsername(Item) %>' /></strong>
+                                            on
+                                            <asp:Label ID="DatePostedLabel" runat="server" Text='<%# Item.DatePosted.ToShortDateString() %>' />
+                                        </div>
+                                    </div>
+                                </ItemTemplate>
+                                <LayoutTemplate>
+                                    <div id="itemPlaceholderContainer" runat="server" style="">
+                                        <span runat="server" id="itemPlaceholder" />
+                                    </div>
+                                    <div style="">
+                                        <asp:DataPager PageSize="1" ID="DataPagerReviews" runat="server">
+                                            <Fields>
+                                                <asp:NumericPagerField CurrentPageLabelCssClass="btn btn-primary" NumericButtonCssClass="btn btn-default" />
+                                            </Fields>
+                                        </asp:DataPager>
+                                    </div>
+                                </LayoutTemplate>
+                            </asp:ListView>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <asp:HiddenField runat="server" ID="RequestId" Value='<%# Request.Params["Id"] %>' />
-        <asp:EntityDataSource ID="EntityDataSourceReviews" runat="server" 
+        <asp:EntityDataSource ID="EntityDataSourceReviews" runat="server"
             ConnectionString="name=CinephileDbEntities" DefaultContainerName="CinephileDbEntities"
-             EnableFlattening="False" EntitySetName="Reviews">
-           <%-- <WhereParameters>
+            EnableFlattening="False" EntitySetName="Reviews">
+            <%-- <WhereParameters>
                 <asp:ControlParameter Name="MovId" ControlID="RequestId" DbType="Guid" />
             </WhereParameters>--%>
         </asp:EntityDataSource>
-        
+
     </div>
 </asp:Content>

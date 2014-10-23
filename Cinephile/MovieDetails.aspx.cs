@@ -150,6 +150,12 @@ namespace Cinephile
             }
         }
 
+        protected string GetUsername(Review item)
+        {
+            CinephileDbEntities db = new CinephileDbEntities();
+            return db.AspNetUsers.FirstOrDefault(u => u.Id == item.UserId).UserName;
+        }
+
         protected void GridViewActors_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             this.GridViewActors.PageIndex = e.NewPageIndex;
