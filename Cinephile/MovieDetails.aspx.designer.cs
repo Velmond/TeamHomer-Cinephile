@@ -40,6 +40,15 @@ namespace Cinephile {
         protected global::System.Web.UI.WebControls.Label Rating;
         
         /// <summary>
+        /// RepeaterDirectors control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterDirectors;
+        
+        /// <summary>
         /// StoryLine control.
         /// </summary>
         /// <remarks>
@@ -112,15 +121,6 @@ namespace Cinephile {
         protected global::System.Web.UI.WebControls.Label Length;
         
         /// <summary>
-        /// RepeaterDirectors control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepeaterDirectors;
-        
-        /// <summary>
         /// GridViewActors control.
         /// </summary>
         /// <remarks>
@@ -128,5 +128,32 @@ namespace Cinephile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewActors;
+        
+        /// <summary>
+        /// ListViewReviews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ListViewReviews;
+        
+        /// <summary>
+        /// RequestId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField RequestId;
+        
+        /// <summary>
+        /// EntityDataSourceReviews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceReviews;
     }
 }

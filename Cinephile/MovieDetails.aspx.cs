@@ -19,7 +19,7 @@ namespace Cinephile
             // Warning: Possible n+1 queries problem
             var movie = db.Movies
                 .Where(m => m.Id.ToString() == movieId)
-                .Select(m => new 
+                .Select(m => new
                 {
                     PosterPath = m.PosterPath,
                     Title = m.Title,
@@ -80,7 +80,7 @@ namespace Cinephile
             this.RepeaterDirectors.DataSource = movie.Directors;
             var dt = this.ConvertToDataTable(movie.Actors.ToList());
             this.GridViewActors.DataSource = dt;
-            
+
             Page.DataBind();
         }
 
