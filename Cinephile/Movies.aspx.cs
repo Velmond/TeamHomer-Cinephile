@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-using Cinephile.Data;
-
-namespace Cinephile
+﻿namespace Cinephile
 {
+    using System;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Web.UI;
+    using System.Web.UI.WebControls;
+
+    using Cinephile.Data;
+
     public partial class Movies : Page
     {
         private const int ItemsPerPage = 8;
@@ -17,7 +16,7 @@ namespace Cinephile
         {
             Message.Text = "";
 
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 string searched = Request.Params["search"];
                 SearchBox.Text = Request.Params["search"] != null ? Request.Params["search"] : string.Empty;
@@ -65,10 +64,10 @@ namespace Cinephile
 
         protected void EditButton_Click(object sender, EventArgs e)
         {
-            if(MoviesListView.SelectedIndex >= 0)
+            if (MoviesListView.SelectedIndex >= 0)
             {
                 string id = MoviesListView.SelectedDataKey.Value.ToString();
-                Response.Redirect("~/Admin/CreateMovie?id=" + id);
+                Response.Redirect("~/Admin/EditMovie?id=" + id);
                 MoviesListView.DeleteItem(MoviesListView.SelectedIndex);
 
                 MoviesListView.SelectedIndex = -1;
@@ -81,7 +80,7 @@ namespace Cinephile
 
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
-            if(MoviesListView.SelectedIndex >= 0)
+            if (MoviesListView.SelectedIndex >= 0)
             {
                 MoviesListView.DeleteItem(MoviesListView.SelectedIndex);
                 MoviesListView.SelectedIndex = -1;

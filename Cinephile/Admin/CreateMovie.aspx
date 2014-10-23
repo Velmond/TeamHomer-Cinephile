@@ -5,6 +5,7 @@
     <div class="form-horizontal">
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
+        <asp:Label CssClass="text-danger" ID="ValidationSummaryMessages" runat="server"></asp:Label>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="TextBoxMovieTitle" CssClass="col-md-2 control-label">Title</asp:Label>
             <div class="col-md-10">
@@ -16,7 +17,7 @@
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="TextBoxMovieStoryline" CssClass="col-md-2 control-label">Storyline</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="TextBoxMovieStoryline" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="TextBoxMovieStoryline" CssClass="form-control" TextMode="MultiLine" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxMovieStoryline"
                     CssClass="text-danger" ErrorMessage="The Storyline field is required." />
             </div>
@@ -73,17 +74,16 @@
                     DataValueField="Id"
                     AppendDataBoundItems="True"
                     SelectionMode="Multiple"
-                    Rows="10">
-                </asp:ListBox>
+                    Rows="10"></asp:ListBox>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ListBoxMovieGenres"
                     CssClass="text-danger" ErrorMessage="The Gener field is required." />
             </div>
         </div>
         <div class="form-group">
-            <asp:EntityDataSource ID="EntityDataSourceMovieCountries" runat="server" 
-                ConnectionString="name=CinephileDbEntities" 
-                DefaultContainerName="CinephileDbEntities" 
-                EnableFlattening="False" 
+            <asp:EntityDataSource ID="EntityDataSourceMovieCountries" runat="server"
+                ConnectionString="name=CinephileDbEntities"
+                DefaultContainerName="CinephileDbEntities"
+                EnableFlattening="False"
                 EntitySetName="Countries">
             </asp:EntityDataSource>
             <asp:Label runat="server" AssociatedControlID="ListBoxMovieCountries" CssClass="col-md-2 control-label">Countries</asp:Label>
@@ -93,8 +93,7 @@
                     DataValueField="Id"
                     AppendDataBoundItems="True"
                     SelectionMode="Multiple"
-                    Rows="10" DataSourceID="EntityDataSourceMovieCountries">
-                </asp:ListBox>
+                    Rows="10" DataSourceID="EntityDataSourceMovieCountries"></asp:ListBox>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ListBoxMovieCountries"
                     CssClass="text-danger" ErrorMessage="The Country field is required." />
             </div>
@@ -109,7 +108,7 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" OnClick="ButtonCreateMovie_Click" Text="Register" CssClass="btn btn-default" />
+                <asp:Button runat="server" OnClick="ButtonCreateMovie_Click" Text="Create" CssClass="btn btn-default" />
             </div>
         </div>
     </div>

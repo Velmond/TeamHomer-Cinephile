@@ -147,6 +147,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\EditMovie.aspx" />
     <Content Include="ArtistDetails.aspx" />
     <Content Include="Images\star-empty.png" />
     <Content Include="Images\star-half.png" />
@@ -340,6 +341,13 @@
     </Compile>
     <Compile Include="Admin\CreateMovie.aspx.designer.cs">
       <DependentUpon>CreateMovie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditMovie.aspx.cs">
+      <DependentUpon>EditMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditMovie.aspx.designer.cs">
+      <DependentUpon>EditMovie.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>

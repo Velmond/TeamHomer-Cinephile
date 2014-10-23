@@ -32,7 +32,7 @@
                 </asp:DataPager>
             </div>
             <div class="col-md-4">
-                <% if(HttpContext.Current.User.Identity.IsAuthenticated && HttpContext.Current.User.IsInRole("admin"))
+                <% if (HttpContext.Current.User.Identity.IsAuthenticated && HttpContext.Current.User.IsInRole("admin"))
                    { %>
                 <asp:Button runat="server" ID="DeleteButton"
                     Text="Delete"

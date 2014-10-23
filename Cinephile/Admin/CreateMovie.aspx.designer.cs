@@ -13,6 +13,15 @@ namespace Cinephile.Admin {
     public partial class CreateMovie {
         
         /// <summary>
+        /// ValidationSummaryMessages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ValidationSummaryMessages;
+        
+        /// <summary>
         /// TextBoxMovieTitle control.
         /// </summary>
         /// <remarks>
