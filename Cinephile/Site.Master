@@ -49,13 +49,19 @@
                     <a class="navbar-brand" runat="server" href="~/">Cinephile</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Movies">Movies</a></li>
-                        <% if(HttpContext.Current.User.Identity.IsAuthenticated && HttpContext.Current.User.IsInRole("admin"))
-                           { %>
-                        <li><a runat="server" href="~/Admin/Users">Users</a></li>
-                        <% } %>
-                    </ul>
+
+                    <div class="col-md-3">
+                        <asp:Menu runat="server" ID="Menu"
+                            CssClass="pull-left"
+                            DataSourceID="SiteMapDataSource"
+                            Orientation="Horizontal"
+                            StaticDisplayLevels="2">
+                            <StaticMenuStyle CssClass="nav navbar-nav list-inline" />
+                        </asp:Menu>
+
+                        <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource" />
+                    </div>
+
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
