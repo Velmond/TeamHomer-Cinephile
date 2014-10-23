@@ -10,32 +10,33 @@ namespace Cinephile
 {
     public partial class ArtistDetails : System.Web.UI.Page
     {
+        private Artist artist;
+        private CinephileDbEntities db = new CinephileDbEntities();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            CinephileDbEntities db = new CinephileDbEntities();
-
             string artistId;
-            var artist = db.Artists.FirstOrDefault();
+            this.artist = db.Artists.FirstOrDefault();
 
             if (Request.Params["Id"] != null)
             {
                 artistId = Request.Params["Id"];
 
-                artist = db.Artists
+                this.artist = db.Artists
                            .Where(a => a.Id == new Guid(artistId))
                            .FirstOrDefault();
                 
             }
 
-            this.ArtistName.Text = artist.FullName;
-            this.HeaderArtistName.Text = artist.FullName;
-            this.ArtistImage.ImageUrl = artist.PicturePath;
-            this.ArtistBirthDate.Text = string.Format("{0:dd MMMMMMMMM yyyy}", artist.BirthDate.Value);
-            this.ArtistCountry.Text = artist.Country.Name;
+            this.ArtistName.Text = this.artist.FullName;
+            this.HeaderArtistName.Text = this.artist.FullName;
+            this.ArtistImage.ImageUrl = this.artist.PicturePath;
+            this.ArtistBirthDate.Text = string.Format("{0:dd MMMMMMMMM yyyy}", this.artist.BirthDate.Value);
+            this.ArtistCountry.Text = this.artist.Country.Name;
 
             //this.MoviesListView.DataSource = artist.MoviesPlayedIn;
-            this.GridViewMovies.DataSource = artist.MoviesPlayedIn.ToList();
-            this.GridViewMoviesDirector.DataSource = artist.MoviesDirected.ToList();
+            this.GridViewMovies.DataSource = this.artist.MoviesPlayedIn.ToList();
+            this.GridViewMoviesDirector.DataSource = this.artist.MoviesDirected.ToList();
 
             this.DataBind();
         }
@@ -47,7 +48,41 @@ namespace Cinephile
 
         protected void GridViewMovies_Sorting(object sender, GridViewSortEventArgs e)
         {
+            var moviesGridView = sender as GridView;
+            var dataSource = moviesGridView.DataSource as IList<Movie>;
+            var sortDirection = this.Session["sortDir"];
 
+            if (sortDirection == null || sortDirection == "asc")
+            {
+                if (e.SortExpression == "Title")
+                {
+                    moviesGridView.DataSource = dataSource.OrderBy(m => m.Title).ToList();
+                }
+                else if (e.SortExpression == "ReleseDate")
+                {
+                    moviesGridView.DataSource = dataSource.OrderBy(m => m.ReleseDate).ToList();
+                    
+                }
+
+                this.DataBind();
+
+                this.Session["sortDir"] = "desc";
+            }
+            else if (sortDirection == "desc")
+            {
+                if (e.SortExpression == "Title")
+                {
+                    moviesGridView.DataSource = dataSource.OrderByDescending(m => m.Title).ToList();
+                }
+                else if (e.SortExpression == "ReleseDate")
+                {
+                    moviesGridView.DataSource = dataSource.OrderByDescending(m => m.ReleseDate).ToList();
+                }
+
+                this.DataBind();
+
+                this.Session["sortDir"] = "asc";
+            }
         }
     }
 }

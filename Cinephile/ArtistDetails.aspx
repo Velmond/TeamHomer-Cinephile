@@ -49,7 +49,7 @@
                                 <Columns>
                                     <asp:ImageField DataImageUrlField="PosterPath" ControlStyle-Width="90px" ></asp:ImageField>
                                     <asp:HyperLinkField DataTextField="Title" HeaderText="Title"
-                                        SortExpression="FullName" DataNavigateUrlFields='Id' DataNavigateUrlFormatString="~\MovieDetails?id={0}" />
+                                        SortExpression="Title" DataNavigateUrlFields='Id' DataNavigateUrlFormatString="~\MovieDetails?id={0}" />
                                     <asp:BoundField DataField="ReleseDate" DataFormatString="{0:d}" HeaderText="Relese Date" SortExpression="ReleseDate" />
                                 </Columns>
                                 <PagerStyle CssClass="pagination" HorizontalAlign="Center" VerticalAlign="Middle" />
@@ -73,7 +73,7 @@
                                 <Columns>
                                     <asp:ImageField DataImageUrlField="PosterPath" ControlStyle-Width="90px" ></asp:ImageField>
                                     <asp:HyperLinkField DataTextField="Title" HeaderText="Title"
-                                        SortExpression="FullName" DataNavigateUrlFields='Id' DataNavigateUrlFormatString="~\MovieDetails?id={0}" />
+                                        SortExpression="Title" DataNavigateUrlFields='Id' DataNavigateUrlFormatString="~\MovieDetails?id={0}" />
                                     <asp:BoundField DataField="ReleseDate" DataFormatString="{0:d}" HeaderText="Relese Date" SortExpression="ReleseDate" />
                                 </Columns>
                                 <PagerStyle CssClass="pagination" HorizontalAlign="Center" VerticalAlign="Middle" />
