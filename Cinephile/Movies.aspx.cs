@@ -21,24 +21,6 @@ namespace Cinephile
             {
                 string searched = Request.Params["search"];
                 SearchBox.Text = Request.Params["search"] != null ? Request.Params["search"] : string.Empty;
-                
-                CinephileDbEntities db = new CinephileDbEntities();
-
-                if(!string.IsNullOrEmpty(searched))
-                {
-                    MoviesListView.DataSource = db.Movies
-                        .Where(m => m.Title.ToLower().IndexOf(searched.ToLower()) >= 0)
-                        .OrderBy(m => m.Title.ToLower())
-                        .ToList();
-                }
-                else
-                {
-                    MoviesListView.DataSource = db.Movies
-                        .OrderBy(m => m.Title.ToLower())
-                        .ToList();
-                }
-
-                MoviesListView.DataBind();
             }
         }
 
@@ -52,33 +34,28 @@ namespace Cinephile
             Response.Redirect("~/Movies");
         }
 
-        public IQueryable<Movie> MoviesAdminListView_GetData()
+        public IQueryable<Movie> MoviesListView_GetData()
         {
             CinephileDbEntities db = new CinephileDbEntities();
-            string searched = string.IsNullOrEmpty(Request.Params["search"]) ? string.Empty : Request.Params["search"].ToLower();
-            string page = Request.Params["page"];
-            var pageNum = page != null ? int.Parse(page) : 1;
+            string searched = string.IsNullOrEmpty(Request.Params["search"])
+                ? string.Empty
+                : Request.Params["search"].ToLower();
 
             SearchBox.Text = searched;
 
-            var adminMovies = db.Movies
+            return db.Movies
                 .OrderBy(m => m.Title.ToLower())
-                .ToList()
-                .Where(m => m.Title.ToLower().IndexOf(searched) >= 0)
-                .Skip((pageNum - 1) * ItemsPerPage)
-                .Take(ItemsPerPage);
-
-            return adminMovies.AsQueryable<Movie>();
+                .Where(m => m.Title.ToLower().Contains(searched));
         }
 
-        protected void MoviesAdminListView_SelectedIndexChanging(object sender, ListViewSelectEventArgs e)
+        protected void MoviesListView_SelectedIndexChanging(object sender, ListViewSelectEventArgs e)
         {
-            MoviesAdminListView.SelectedIndex = e.NewSelectedIndex;
+            MoviesListView.SelectedIndex = e.NewSelectedIndex;
         }
 
-        protected void MoviesAdminListView_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
+        protected void MoviesListView_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
         {
-            MoviesAdminListView.SelectedIndex = -1;
+            MoviesListView.SelectedIndex = -1;
         }
 
         protected void CreateButton_Click(object sender, EventArgs e)
@@ -88,13 +65,13 @@ namespace Cinephile
 
         protected void EditButton_Click(object sender, EventArgs e)
         {
-            if(MoviesAdminListView.SelectedIndex >= 0)
+            if(MoviesListView.SelectedIndex >= 0)
             {
-                string id = MoviesAdminListView.SelectedDataKey.Value.ToString();
+                string id = MoviesListView.SelectedDataKey.Value.ToString();
                 Response.Redirect("~/Admin/CreateMovie?id=" + id);
-                MoviesAdminListView.DeleteItem(MoviesAdminListView.SelectedIndex);
+                MoviesListView.DeleteItem(MoviesListView.SelectedIndex);
 
-                MoviesAdminListView.SelectedIndex = -1;
+                MoviesListView.SelectedIndex = -1;
             }
             else
             {
@@ -104,10 +81,10 @@ namespace Cinephile
 
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
-            if(MoviesAdminListView.SelectedIndex >= 0)
+            if(MoviesListView.SelectedIndex >= 0)
             {
-                MoviesAdminListView.DeleteItem(MoviesAdminListView.SelectedIndex);
-                MoviesAdminListView.SelectedIndex = -1;
+                MoviesListView.DeleteItem(MoviesListView.SelectedIndex);
+                MoviesListView.SelectedIndex = -1;
             }
             else
             {
@@ -115,16 +92,34 @@ namespace Cinephile
             }
         }
 
-        public void MoviesAdminListView_DeleteItem(string id)
+        public void MoviesListView_DeleteItem(string id)
         {
             CinephileDbEntities db = new CinephileDbEntities();
 
-            var movie = db.Set<Movie>().Include(m => m.Actors).Include(m => m.Directors).Include(m => m.Countries)
-                .Include(m => m.Genres).Include(m => m.Language).Include(m => m.Ratings).Include(m => m.Reviews)
+            // Get everything the movie is connected to avoid error due to FK_... constraint
+            var movie = db.Set<Movie>()
+                .Include(m => m.Actors)
+                .Include(m => m.Directors)
+                .Include(m => m.Countries)
+                .Include(m => m.Genres)
+                .Include(m => m.Language)
+                .Include(m => m.Ratings)
+                .Include(m => m.Reviews)
                 .FirstOrDefault(m => m.Id.ToString() == id);
 
             db.Set<Movie>().Remove(movie);
             db.SaveChanges();
+        }
+
+        protected void SortButton_Click(object sender, EventArgs e)
+        {
+            String expression = SortList.SelectedValue;
+
+            SortDirection direction = SortDirectionList.SelectedValue == "DESC"
+                ? SortDirection.Descending
+                : SortDirection.Ascending;
+
+            MoviesListView.Sort(expression, direction);
         }
     }
 }

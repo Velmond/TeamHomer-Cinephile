@@ -13,40 +13,13 @@ namespace Cinephile {
     public partial class Movies {
         
         /// <summary>
-        /// MovieListViewDataPager control.
+        /// ListViewDataPager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataPager MovieListViewDataPager;
-        
-        /// <summary>
-        /// SearchBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SearchBox;
-        
-        /// <summary>
-        /// ShowAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ShowAll;
-        
-        /// <summary>
-        /// SearchSubmitBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchSubmitBtn;
+        protected global::System.Web.UI.WebControls.DataPager ListViewDataPager;
         
         /// <summary>
         /// DeleteButton control.
@@ -76,6 +49,60 @@ namespace Cinephile {
         protected global::System.Web.UI.WebControls.Button EditButton;
         
         /// <summary>
+        /// SearchBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SearchBox;
+        
+        /// <summary>
+        /// ShowAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ShowAll;
+        
+        /// <summary>
+        /// SearchSubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SearchSubmitBtn;
+        
+        /// <summary>
+        /// SortList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList SortList;
+        
+        /// <summary>
+        /// SortDirectionList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList SortDirectionList;
+        
+        /// <summary>
+        /// SortButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SortButton;
+        
+        /// <summary>
         /// Message control.
         /// </summary>
         /// <remarks>
@@ -83,15 +110,6 @@ namespace Cinephile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Message;
-        
-        /// <summary>
-        /// MoviesAdminListView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView MoviesAdminListView;
         
         /// <summary>
         /// MoviesListView control.

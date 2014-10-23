@@ -7,108 +7,90 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Cinephile.Admin {
+namespace Cinephile {
     
     
-    public partial class CreateMovie {
+    public partial class ArtistDetails {
         
         /// <summary>
-        /// TextBoxMovieTitle control.
+        /// ArtistImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxMovieTitle;
+        protected global::System.Web.UI.WebControls.Image ArtistImage;
         
         /// <summary>
-        /// TextBoxMovieStoryline control.
+        /// LabelArtistName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxMovieStoryline;
+        protected global::System.Web.UI.WebControls.Label LabelArtistName;
         
         /// <summary>
-        /// TextBoxMovieReleaseDate control.
+        /// ArtistName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxMovieReleaseDate;
+        protected global::System.Web.UI.WebControls.Label ArtistName;
         
         /// <summary>
-        /// TextBoxMovieRunningTime control.
+        /// LabelArtistBirthDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxMovieRunningTime;
+        protected global::System.Web.UI.WebControls.Label LabelArtistBirthDate;
         
         /// <summary>
-        /// EntityDataSourceMovieLanguage control.
+        /// ArtistBirthDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceMovieLanguage;
+        protected global::System.Web.UI.WebControls.Label ArtistBirthDate;
         
         /// <summary>
-        /// DropDownListMovieLanguages control.
+        /// LabelArtistCountry control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListMovieLanguages;
+        protected global::System.Web.UI.WebControls.Label LabelArtistCountry;
         
         /// <summary>
-        /// EntityDataSourceMovieGenres control.
+        /// ArtistCountry control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceMovieGenres;
+        protected global::System.Web.UI.WebControls.Label ArtistCountry;
         
         /// <summary>
-        /// ListBoxMovieGenres control.
+        /// HeaderArtistName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBoxMovieGenres;
+        protected global::System.Web.UI.WebControls.Label HeaderArtistName;
         
         /// <summary>
-        /// EntityDataSourceMovieCountries control.
+        /// MoviesListView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource EntityDataSourceMovieCountries;
-        
-        /// <summary>
-        /// ListBoxMovieCountries control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBoxMovieCountries;
-        
-        /// <summary>
-        /// FileUploadMoviePoster control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUploadMoviePoster;
+        protected global::System.Web.UI.WebControls.ListView MoviesListView;
     }
 }
