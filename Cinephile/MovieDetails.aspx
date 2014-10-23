@@ -70,7 +70,7 @@
                             <h1 class="panel-title gold"><strong>Cast</strong></h1>
                         </div>
                         <div class="panel-body">
-                            <asp:GridView ID="GridViewActors" AllowPaging="true" PageSize="3" AutoGenerateColumns="false"
+                            <asp:GridView ID="GridViewActors" AllowPaging="true" PageSize="4" AutoGenerateColumns="false"
                                 AllowSorting="true" runat="server" OnPageIndexChanging="GridViewActors_PageIndexChanging"
                                 OnSorting="GridViewActors_Sorting" GridLines="None" CellPadding="2">
                                 <Columns>
@@ -84,6 +84,7 @@
                                     </asp:TemplateField>
                                     <asp:BoundField DataField="BirthDate" DataFormatString="{0:d}" HeaderText="Born" SortExpression="BirthDate" />
                                 </Columns>
+                                <PagerStyle CssClass="pagination" HorizontalAlign="Center" VerticalAlign="Middle"/>
                             </asp:GridView>
                         </div>
                     </div>
@@ -102,15 +103,17 @@
                                 DataKeyNames="UserId,MovieId" DataSourceID="EntityDataSourceReviews"
                                 ItemType="Cinephile.Data.Review">
                                 <EmptyDataTemplate>
-                                    <span class="alert alert-warning">No reviews for this movie.</span>
+                                    <div class="text-center"> 
+                                         <span class="alert alert-warning">No reviews for this movie.</span>
+                                    </div>                                  
                                 </EmptyDataTemplate>
                                 <ItemTemplate>
                                     <div class="panel panel-default">
                                         <div class="panel-heading text-center">
                                             <h4>
                                                 <strong>
-                                                <asp:Label ID="TitleLabel" CssClass="align-center" runat="server" Text='<%#: Item.Title %>' />
-                                            </strong>
+                                                    <asp:Label ID="TitleLabel" CssClass="align-center" runat="server" Text='<%#: Item.Title %>' />
+                                                </strong>
                                             </h4>
                                         </div>
                                         <div class="panel-body">
@@ -129,7 +132,7 @@
                                         <span runat="server" id="itemPlaceholder" />
                                     </div>
                                     <div style="">
-                                        <asp:DataPager PageSize="1" ID="DataPagerReviews" runat="server">
+                                        <asp:DataPager PageSize="2" ID="DataPagerReviews" runat="server">
                                             <Fields>
                                                 <asp:NumericPagerField CurrentPageLabelCssClass="btn btn-primary" NumericButtonCssClass="btn btn-default" />
                                             </Fields>
@@ -137,7 +140,14 @@
                                     </div>
                                 </LayoutTemplate>
                             </asp:ListView>
+                        </div>                        
+                        <% if (HttpContext.Current.User.Identity.IsAuthenticated)
+	                    { %>
+                        <div class="panel-footer text-center">
+                            <asp:Button Text="Add Review" CssClass="btn btn-warning" PostBackUrl='<%# "~/ReviewMovie.aspx/id=" + Request.Params["id"] %>' runat="server" />
                         </div>
+		                <%    
+	                    } %>
                     </div>
                 </div>
             </div>
@@ -145,10 +155,10 @@
         <asp:HiddenField runat="server" ID="RequestId" Value='<%# Request.Params["Id"] %>' />
         <asp:EntityDataSource ID="EntityDataSourceReviews" runat="server"
             ConnectionString="name=CinephileDbEntities" DefaultContainerName="CinephileDbEntities"
-            EnableFlattening="False" EntitySetName="Reviews">
-            <%-- <WhereParameters>
+            EnableFlattening="False" EntitySetName="Reviews" Where="it.MovieId=@MovId">
+             <WhereParameters>
                 <asp:ControlParameter Name="MovId" ControlID="RequestId" DbType="Guid" />
-            </WhereParameters>--%>
+            </WhereParameters>
         </asp:EntityDataSource>
 
     </div>

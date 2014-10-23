@@ -347,6 +347,7 @@
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controls\TextBox.cs" />
     <Compile Include="Movies.aspx.cs">
       <DependentUpon>Movies.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
