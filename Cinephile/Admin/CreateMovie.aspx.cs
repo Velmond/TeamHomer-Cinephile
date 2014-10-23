@@ -148,4 +148,20 @@ namespace Cinephile.Admin
             Response.Redirect("~/MovieDetails.aspx?id=" + newMovie.Id);
         }
     }
+}using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Cinephile.Admin
+{
+    public partial class CreateMovie : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
