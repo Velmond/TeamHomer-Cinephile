@@ -72,13 +72,13 @@ input[type="select"] {
     font-size: 1.5em;
 }
 
-#MainContent_MovieListViewDataPager a,
-#MainContent_MovieListViewDataPager span,
-#MainContent_MovieListViewDataPager .page-control,
-#MainContent_MovieListViewDataPager .page-number {
+#MainContent_ListViewDataPager a,
+#MainContent_ListViewDataPager span,
+#MainContent_ListViewDataPager .page-control,
+#MainContent_ListViewDataPager .page-number {
     display: inline-block;
     text-align: center;
-    padding: .25% .5%;
+    padding: 1% 2%;
     min-width: 3%;
     border: 1px solid lightgray;
     border-top-width: 2px;
@@ -87,28 +87,28 @@ input[type="select"] {
     color: gray;
 }
 
-    #MainContent_MovieListViewDataPager a:hover,
-    #MainContent_MovieListViewDataPager span:hover,
-    #MainContent_MovieListViewDataPager .page-control:hover,
-    #MainContent_MovieListViewDataPager .page-number:hover {
+    #MainContent_ListViewDataPager a:hover,
+    #MainContent_ListViewDataPager span:hover,
+    #MainContent_ListViewDataPager .page-control:hover,
+    #MainContent_ListViewDataPager .page-number:hover {
         text-decoration: none;
         border-color: black;
         color: black;
     }
 
-#MainContent_MovieListViewDataPager .page-number-selected {
+#MainContent_ListViewDataPager .page-number-selected {
     border-color: black;
     color: black;
     cursor: default;
 }
 
-#MainContent_MovieListViewDataPager .aspNetDisabled {
+#MainContent_ListViewDataPager .aspNetDisabled {
     border-color: lightgray;
     color: lightgray;
     cursor: default;
 }
 
-    #MainContent_MovieListViewDataPager .aspNetDisabled:hover {
+    #MainContent_ListViewDataPager .aspNetDisabled:hover {
         border-color: lightgray;
         color: lightgray;
         -webkit-touch-callout: none;
@@ -118,3 +118,10 @@ input[type="select"] {
         -ms-user-select: none;
         user-select: none;
     }
+
+.gold {
+    color: #9F8225;
+}
+
+
+

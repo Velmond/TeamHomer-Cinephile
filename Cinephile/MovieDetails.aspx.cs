@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
 
 namespace Cinephile
 {
@@ -19,7 +20,7 @@ namespace Cinephile
             // Warning: Possible n+1 queries problem
             var movie = db.Movies
                 .Where(m => m.Id.ToString() == movieId)
-                .Select(m => new 
+                .Select(m => new
                 {
                     PosterPath = m.PosterPath,
                     Title = m.Title,
@@ -80,7 +81,7 @@ namespace Cinephile
             this.RepeaterDirectors.DataSource = movie.Directors;
             var dt = this.ConvertToDataTable(movie.Actors.ToList());
             this.GridViewActors.DataSource = dt;
-            
+
             Page.DataBind();
         }
 
@@ -148,6 +149,22 @@ namespace Cinephile
                 this.GridViewActors.DataSource = dataView;
                 this.GridViewActors.DataBind();
             }
+        }
+
+        protected bool HasReviewed()
+        {
+            CinephileDbEntities db = new CinephileDbEntities();            
+            var movieId = Request.Params["Id"];
+            var userId = Page.User.Identity.GetUserId();
+
+            var result = db.Reviews.Any(r => r.MovieId.ToString() == movieId && r.UserId == userId);
+            return result;
+        }
+
+        protected string GetUsername(Review item)
+        {
+            CinephileDbEntities db = new CinephileDbEntities();
+            return db.AspNetUsers.FirstOrDefault(u => u.Id == item.UserId).UserName;
         }
 
         protected void GridViewActors_PageIndexChanging(object sender, GridViewPageEventArgs e)

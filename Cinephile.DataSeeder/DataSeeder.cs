@@ -9,18 +9,54 @@
 
     public class DataSeeder
     {
+        static Random rand = new Random();
+
         public static void Main()
         {
             CinephileDbEntities dbContext = new CinephileDbEntities();
 
-            SeedCoutries(dbContext);
-            SeedLanguages(dbContext);
-            SeedGenres(dbContext);
-            SeedArtists(dbContext);
-            SeedMovies(dbContext);
+            if(dbContext.AspNetRoles.Count() == 0)
+            {
+                SeedRoles(dbContext);
+            }
+
+            if(dbContext.Countries.Count() == 0)
+            {
+                SeedCoutries(dbContext);
+            }
+
+            if(dbContext.Languages.Count() == 0)
+            {
+                SeedLanguages(dbContext);
+            }
+
+            if(dbContext.Genres.Count() == 0)
+            {
+                SeedGenres(dbContext);
+            }
+
+            if(dbContext.Artists.Count() == 0)
+            {
+                SeedArtists(dbContext);
+            }
+
+            if(dbContext.Movies.Count() == 0)
+            {
+                SeedMovies(dbContext);
+            }
         }
 
-        static Random rand = new Random();
+        private static void SeedRoles(CinephileDbEntities dbContext)
+        {
+            dbContext.AspNetRoles.AddRange(new AspNetRole[] {
+                new AspNetRole() { Name = "user" },
+                new AspNetRole() { Name = "moderator" },
+                new AspNetRole() { Name = "admin" },
+                new AspNetRole() { Name = "banned" }
+            });
+
+            dbContext.SaveChanges();
+        }
 
         private static void SeedMovies(CinephileDbEntities dbContext)
         {
