@@ -131,3 +131,7 @@ input[type="select"] {
     outline: none;
 }
 
+.overflo {
+    overflow-wrap: break-word;
+}
+
