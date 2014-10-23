@@ -13,20 +13,55 @@
                     <div class="form-group">
                         <label for="inputEmail" class="col-lg-2 control-label">Title</label>
                         <div class="col-lg-10">
-                            <ext:TextBox runat="server" ID="UserTitle" CssClass="form-control input-large" PlaceHolder="Title"></ext:TextBox>
+                            <ext:TextBox runat="server" ID="UserTitle" CssClass="form-control input-large" PlaceHolder="Title">                                
+                            </ext:TextBox>
+                            <div class="row">
+                                <asp:RequiredFieldValidator
+                                    ID="RequiredFieldValidatorTitle"
+                                    ControlToValidate="UserTitle"
+                                    runat="server"
+                                    ErrorMessage="Title is required"
+                                    CssClass="alert alert-danger">
+                                </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator
+                                    ID="RegularExpressionValidatorTitle"
+                                    runat="server"
+                                    ErrorMessage="Title must be between 5 and 25 characters long"
+                                    ControlToValidate="UserTitle"
+                                    ValidationExpression=".{5,25}"
+                                    CssClass="alert alert-danger">                                 
+                                </asp:RegularExpressionValidator>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="textArea" class="col-lg-2 control-label">Review</label>
                         <div class="col-lg-10">
                             <ext:TextBox runat="server" TextMode="MultiLine"
-                                 Rows="5" ID="UserReview" CssClass="form-control"
-                                 PlaceHolder="Your review goes here...">
+                                Rows="5" ID="UserReview" CssClass="form-control"
+                                PlaceHolder="Your review goes here...">
                             </ext:TextBox>
                             <span class="help-block text-justified">You can share you opinion on the movie subject, 
                                 actors' play and the feelings you had when the film ended. 
                                 Would you recommend the movie to a friend?
                             </span>
+                            <div class="row">
+                                <asp:RequiredFieldValidator
+                                    ID="RequiredFieldValidatorBody"
+                                    ControlToValidate="UserReview"
+                                    runat="server"
+                                    ErrorMessage="Review is required"
+                                    CssClass="alert alert-danger">
+                                </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator
+                                    ID="RegularExpressionValidatorBody"
+                                    runat="server"
+                                    ErrorMessage="Review must be between 100 and 500 characters long"
+                                    ControlToValidate="UserReview"
+                                    ValidationExpression=".{100,500}"
+                                    CssClass="alert alert-danger">                                 
+                                </asp:RegularExpressionValidator>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">

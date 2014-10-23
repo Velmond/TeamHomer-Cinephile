@@ -79,7 +79,7 @@
                                         SortExpression="FullName" DataNavigateUrlFields="PicturePath" />
                                     <asp:TemplateField HeaderText="Country" SortExpression="CounryId">
                                         <ItemTemplate>
-                                            <%# Eval("Country.Name")%>
+                                            <%#: Eval("Country.Name")%>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:BoundField DataField="BirthDate" DataFormatString="{0:d}" HeaderText="Born" SortExpression="BirthDate" />
@@ -121,9 +121,9 @@
                                         </div>
                                         <div class="panel-footer">
                                             by: <strong>
-                                                <asp:Label ID="AspNetUserLabel" runat="server" Text='<%# GetUsername(Item) %>' /></strong>
+                                                <asp:Label ID="AspNetUserLabel" runat="server" Text='<%#: GetUsername(Item) %>' /></strong>
                                             on
-                                            <asp:Label ID="DatePostedLabel" runat="server" Text='<%# Item.DatePosted.ToShortDateString() %>' />
+                                            <asp:Label ID="DatePostedLabel" runat="server" Text='<%#: Item.DatePosted.ToShortDateString() %>' />
                                         </div>
                                     </div>
                                 </ItemTemplate>

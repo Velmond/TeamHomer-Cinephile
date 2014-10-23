@@ -31,6 +31,24 @@ namespace Cinephile {
         protected global::Cinephile.Controls.TextBox UserTitle;
         
         /// <summary>
+        /// RequiredFieldValidatorTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorTitle;
+        
+        /// <summary>
+        /// RegularExpressionValidatorTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorTitle;
+        
+        /// <summary>
         /// UserReview control.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,24 @@ namespace Cinephile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Cinephile.Controls.TextBox UserReview;
+        
+        /// <summary>
+        /// RequiredFieldValidatorBody control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorBody;
+        
+        /// <summary>
+        /// RegularExpressionValidatorBody control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorBody;
         
         /// <summary>
         /// DropDownListRating control.
