@@ -26,7 +26,7 @@
             <ItemTemplate>
                 <div class="col-md-4 movie-poster-container">
                     <asp:ImageButton runat="server" ID="MovieDetailsImageBtn"
-                        ImageUrl="<%# Item.PosterPath %>"
+                        ImageUrl="<%# Item.PosterPath %>" ToolTip="<%# Item.Title %>"
                         CssClass="movie-poster"
                         PostBackUrl='<%# "~/MovieDetails.aspx?id=" + Item.Id %>'
                         Width="95%"

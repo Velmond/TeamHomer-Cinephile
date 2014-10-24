@@ -12,30 +12,20 @@ namespace Cinephile.Admin
     {
         static string sortingString = "UserName";
         static SortDirection sortingDir = SortDirection.Descending;
-     
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            Message.Text = "";
+
             if(!IsPostBack)
             {
-                Message.Text = "";
-
                 string searched = Request.Params["search"];
                 SearchBox.Text = searched != null ? searched : string.Empty;
-                
-                using(CinephileDbEntities db = new CinephileDbEntities())
-                {
-                    var selected = db.AspNetUsers.Where(u => u.UserName == this.User.Identity.Name).FirstOrDefault();
 
-                    if(selected != null)
-                    {
-                        UserId.Text = selected.Id;
-                        UserName.Text = selected.UserName;
-                        UserEmail.Text = selected.UserName;
-                        UserRole.Text = selected.AspNetRoles.FirstOrDefault() != null
-                            ? selected.AspNetRoles.FirstOrDefault().Name
-                            : "BURN THE WITCH!!1!11!";
-                    }
-                }
+                UserId.Text = "-";
+                UserName.Text = "-";
+                UserEmail.Text = "-";
+                UserRole.Text = "-";
             }
         }
 
@@ -48,29 +38,36 @@ namespace Cinephile.Admin
 
         protected void NewRoleButton_Click(object sender, EventArgs e)
         {
-            CinephileDbEntities db = new CinephileDbEntities();
-
-            var user = db.AspNetUsers.FirstOrDefault(u => u.Id == UserId.Text);
-            user.AspNetRoles.Clear();
-            db.SaveChanges();
-
-            var newRole = db.AspNetRoles.FirstOrDefault(r => r.Name == RolesDropDownList.SelectedItem.Text);
-
-            if(newRole == null)
+            if(UsersListView.SelectedIndex >= 0)
             {
-                newRole = new AspNetRole()
-                {
-                    Name = RolesDropDownList.SelectedItem.Text
-                };
+                CinephileDbEntities db = new CinephileDbEntities();
 
-                db.AspNetRoles.Add(newRole);
+                var user = db.AspNetUsers.FirstOrDefault(u => u.Id == UserId.Text);
+                user.AspNetRoles.Clear();
                 db.SaveChanges();
+
+                var newRole = db.AspNetRoles.FirstOrDefault(r => r.Name == RolesDropDownList.SelectedItem.Text);
+
+                if(newRole == null)
+                {
+                    newRole = new AspNetRole()
+                    {
+                        Name = RolesDropDownList.SelectedItem.Text
+                    };
+
+                    db.AspNetRoles.Add(newRole);
+                    db.SaveChanges();
+                }
+
+                user.AspNetRoles.Add(newRole);
+                db.SaveChanges();
+
+                UserRole.Text = newRole.Name;
             }
-
-            user.AspNetRoles.Add(newRole);
-            db.SaveChanges();
-
-            UserRole.Text = newRole.Name;
+            else
+            {
+                Message.Text = "No user was selected.";
+            }
         }
 
         protected void ShowAll_Click(object sender, EventArgs e)
