@@ -18,8 +18,15 @@
 
             if (!IsPostBack)
             {
+                //CinephileDbEntities db = new CinephileDbEntities();
+                //var user = db.AspNetUsers.FirstOrDefault(u => u.UserName == this.User.Identity.Name);
+                //user.AspNetRoles.Clear();
+                //db.SaveChanges();
+                //user.AspNetRoles.Add(db.AspNetRoles.FirstOrDefault(r => r.Name == "admin"));
+                //db.SaveChanges();
+
                 string searched = Request.Params["search"];
-                SearchBox.Text = Request.Params["search"] != null ? Request.Params["search"] : string.Empty;
+                SearchBox.Text = searched != null ? searched : string.Empty;
             }
         }
 

@@ -10,6 +10,9 @@ namespace Cinephile.Admin
 {
     public partial class Users : System.Web.UI.Page
     {
+        static string sortingString = "UserName";
+        static SortDirection sortingDir = SortDirection.Descending;
+     
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
@@ -91,7 +94,7 @@ namespace Cinephile.Admin
             SearchBox.Text = searched;
 
             return db.AspNetUsers
-                .OrderBy(m => m.UserName.ToLower())
+                .SortBy(sortingString)
                 .Where(m => m.UserName.ToLower().Contains(searched) || m.Email.ToLower().Contains(searched));
         }
 
@@ -127,13 +130,13 @@ namespace Cinephile.Admin
 
         protected void SortButton_Click(object sender, EventArgs e)
         {
-            String expression = SortList.SelectedValue;
+            sortingString = SortList.SelectedValue;
 
-            SortDirection direction = SortDirectionList.SelectedValue == "DESC"
+            sortingDir = SortDirectionList.SelectedValue == "DESC"
                 ? SortDirection.Descending
                 : SortDirection.Ascending;
 
-            UsersListView.Sort(expression, direction);
+            UsersListView.Sort(sortingString, sortingDir);
         }
     }
 }

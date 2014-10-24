@@ -39,7 +39,9 @@ namespace Cinephile.Account
 
                 CinephileDbEntities db = new CinephileDbEntities();
                 SignInStatus signInResult;
-                bool isBanned = db.AspNetUsers.FirstOrDefault(u => u.UserName == Username.Text).AspNetRoles.Select(r => r.Name).Contains("banned");
+                bool isBanned = db.AspNetUsers.FirstOrDefault(u => u.UserName == Username.Text) != null
+                    ? db.AspNetUsers.FirstOrDefault(u => u.UserName == Username.Text).AspNetRoles.Select(r => r.Name).Contains("banned")
+                    : false;
 
                 if(!isBanned)
                 {

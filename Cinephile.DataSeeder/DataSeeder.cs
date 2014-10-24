@@ -56,33 +56,274 @@
             });
 
             dbContext.SaveChanges();
+            Console.WriteLine("Roles seeded");
         }
 
         private static void SeedMovies(CinephileDbEntities dbContext)
         {
             var countries = dbContext.Countries.ToList();
             var languagesIds = dbContext.Languages.Select(l => l.Id).ToList();
+            var englishId = dbContext.Languages.FirstOrDefault(l => l.Name == "English").Id;
+            var bulgarianId = dbContext.Languages.FirstOrDefault(l => l.Name == "Bulgarian").Id;
+            var spanishId = dbContext.Languages.FirstOrDefault(l => l.Name == "Spanish").Id;
+            var japaneseId = dbContext.Languages.FirstOrDefault(l => l.Name == "Japanese").Id;
             var artists = dbContext.Artists.ToList();
             var genres = dbContext.Genres.ToList();
 
-            for(int i = 0 ; i < 30 ; i++)
+            dbContext.Movies.Add(new Movie()
             {
-                dbContext.Movies.Add(new Movie()
-                {
-                    Title = GetRandomMovieTitle(),
-                    Storyline = GetRandomStoryline(),
-                    Countries = AssignRandomCountries(countries),
-                    Actors = AssignRandomActors(artists),
-                    Directors = AssignRandomDirectors(artists),
-                    Genres = AssignRandomGenres(genres),
-                    LanguageId = languagesIds[rand.Next(0, languagesIds.Count)],
-                    ReleseDate = GetRandomDate(1950, 1990),
-                    RunningTime = rand.Next(60, 200),
-                    PosterPath = "~/Images/default-poster.jpg"
-                });
+                Title = "Airplane",
+                Storyline = "An airplane crew takes ill. Surely the only person capable of landing the plane is an ex-pilot afraid to fly. But don't call him Shirley.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = englishId,
+                ReleseDate = new DateTime(1980, 7, 2),
+                RunningTime = 88,
+                PosterPath = "~/Images/airplane-poster.png"
+            });
+            dbContext.SaveChanges();
 
-                dbContext.SaveChanges();
-            }
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "American Horor Story",
+                Storyline = "An anthology series that centers on different characters and locations, including a haunted house, an insane asylum, a witch coven and a freak show.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = englishId,
+                ReleseDate = new DateTime(2011, 1, 1),
+                RunningTime = 60,
+                PosterPath = "~/Images/american-horor-story-poster.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "Annabelle",
+                Storyline = "A couple begin to experience terrifying supernatural occurrences involving a vintage doll shortly after their home is invaded by satanic cultists.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = englishId,
+                ReleseDate = new DateTime(2014, 10, 3),
+                RunningTime = 90,
+                PosterPath = "~/Images/Annabelle-poster.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "Avengers: Age of Ultron",
+                Storyline = "When Tony Stark tries to jumpstart a dormant peacekeeping program, things go awry and it is up to The Avengers to stop the villainous Ultron from enacting his terrible plans.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = englishId,
+                ReleseDate = new DateTime(2015, 5, 1),
+                RunningTime = 120,
+                PosterPath = "~/Images/Avengers-Age-of-Ultron.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "Batman v Superman: Dawn of Justice",
+                Storyline = "The plot has not been disclosed at this time.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = englishId,
+                ReleseDate = new DateTime(2016, 3, 25),
+                RunningTime = 120,
+                PosterPath = "~/Images/Batman-v-Superman-Dawn-of-Justice.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "Dracula Untold",
+                Storyline = "As his kingdom is being threatened by the Turks, young prince Vlad Tepes must become a monster feared by his own kingdom in order to obtain the power needed to protect his own family, and the families of his kingdom.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = englishId,
+                ReleseDate = new DateTime(2014, 10, 10),
+                RunningTime = 92,
+                PosterPath = "~/Images/dracula-untold.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "Gone Girl",
+                Storyline = "With his wife's disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it's suspected that he may not be innocent.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = englishId,
+                ReleseDate = new DateTime(2014, 10, 3),
+                RunningTime = 149,
+                PosterPath = "~/Images/gone-girl-poster.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "The Dark Knight",
+                Storyline = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = englishId,
+                ReleseDate = new DateTime(2008, 7, 18),
+                RunningTime = 152,
+                PosterPath = "~/Images/the-dark-knight-poster.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "The Flash",
+                Storyline = "While working in his lab during a storm one night, a bolt of lightning strikes a tray of chemicals soaking police scientist Barry Allen with its contents. Now able to move at super-speed, Barry becomes The Flash protecting Central City from the threats it faces.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = englishId,
+                ReleseDate = new DateTime(2018, 3, 23),
+                RunningTime = 120,
+                PosterPath = "~/Images/The-Flash.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "The Maze Runner",
+                Storyline = "Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow \"runners\" for a shot at escape.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = englishId,
+                ReleseDate = new DateTime(2012, 9, 19),
+                RunningTime = 113,
+                PosterPath = "~/Images/The-Maze-Runner.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "The Ring",
+                Storyline = "A young journalist must investigate a mysterious videotape which seems to cause the death of anyone in a week of viewing it.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = englishId,
+                ReleseDate = new DateTime(2002, 10, 18),
+                RunningTime = 115,
+                PosterPath = "~/Images/The-Ring.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "One Missed Call",
+                Storyline = "Several people start receiving voice-mails from their future selves - messages which include the date, time, and some of the details of their deaths.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = japaneseId,
+                ReleseDate = new DateTime(2008, 1, 4),
+                RunningTime = 87,
+                PosterPath = "~/Images/One-Missed-Call.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "Scott Pilgrim vs. the World",
+                Storyline = "Scott Pilgrim must defeat his new girlfriend's seven evil exes in order to win her heart.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = japaneseId,
+                ReleseDate = new DateTime(2010, 8, 13),
+                RunningTime = 112,
+                PosterPath = "~/Images/Scott-Pilgrim-vs-the-World.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "The Phantom of the Opera",
+                Storyline = "A young soprano becomes the obsession of a disfigured musical genius who lives beneath the Paris Opéra House.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = japaneseId,
+                ReleseDate = new DateTime(2004, 12, 22),
+                RunningTime = 143,
+                PosterPath = "~/Images/The-Phantom-of-the-Opera.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "The Shawshank Redemption",
+                Storyline = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = japaneseId,
+                ReleseDate = new DateTime(1994, 10, 14),
+                RunningTime = 142,
+                PosterPath = "~/Images/The-Shawshank-Redemption.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "Schindler's List",
+                Storyline = "In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = japaneseId,
+                ReleseDate = new DateTime(1993, 2, 4),
+                RunningTime = 195,
+                PosterPath = "~/Images/Schindler-s-List.jpg"
+            });
+            dbContext.SaveChanges();
+
+            dbContext.Movies.Add(new Movie()
+            {
+                Title = "The Lord of the Rings: The Return of the King",
+                Storyline = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+                Countries = AssignRandomCountries(countries),
+                Actors = AssignRandomActors(artists),
+                Directors = AssignRandomDirectors(artists),
+                Genres = AssignRandomGenres(genres),
+                LanguageId = japaneseId,
+                ReleseDate = new DateTime(2003, 12, 17),
+                RunningTime = 201,
+                PosterPath = "~/Images/The-Lord-of-the-Rings-The-Return-of-the-King.jpg"
+            });
+            dbContext.SaveChanges();
 
             Console.WriteLine("Movies seeded");
         }
@@ -173,22 +414,195 @@
 
         private static void SeedArtists(CinephileDbEntities dbContext)
         {
-            var coutriesIds = dbContext.Countries.Select(c => c.Id).ToList();
-            var rand = new Random();
+            var usId = dbContext.Countries.FirstOrDefault(c => c.Name == "United States").Id;
+            var ukId = dbContext.Countries.FirstOrDefault(c => c.Name == "United Kingdom").Id;
+            var canadaId = dbContext.Countries.FirstOrDefault(c => c.Name == "Canada").Id;
+            var italyId = dbContext.Countries.FirstOrDefault(c => c.Name == "Italy").Id;
+            var australiaId = dbContext.Countries.FirstOrDefault(c => c.Name == "Australia").Id;
+            var israelId = dbContext.Countries.FirstOrDefault(c => c.Name == "Israel").Id;
 
-
-            for(int i = 0 ; i < 30 ; i++)
-            {
-                dbContext.Artists.Add(new Artist()
-                {
-                    FullName = GetRandomArtistName(),
-                    BirthDate = GetRandomDate(1950, 1990),
-                    CounryId = coutriesIds[rand.Next(0, coutriesIds.Count)],
-                    PicturePath = "~/Images/missing-image-artist.png"
-                });
-
-                dbContext.SaveChanges();
-            }
+            dbContext.Artists.AddRange(new Artist[] {
+                new Artist() {
+                    FullName = "Ben Affleck",
+                    BirthDate = new DateTime(1972, 8, 15),
+                    CounryId = usId,
+                    PicturePath="~/Images/ben-affleck.jpg"
+                },
+                new Artist() {
+                    FullName = "Rosamund Pike",
+                    BirthDate = new DateTime(1979, 1, 28),
+                    CounryId = ukId,
+                    PicturePath = "~/Images/rosamund-pike.jpg"
+                },
+                new Artist() {
+                    FullName = "Neil Patrick Harris",
+                    BirthDate = new DateTime(1973, 6, 15),
+                    CounryId = usId,
+                    PicturePath = "~/Images/neil-patrick-harris.jpg"
+                },
+                new Artist() {
+                    FullName = "Tyler Perry",
+                    BirthDate = new DateTime(1969, 9, 14),
+                    CounryId = usId,
+                    PicturePath = "~/Images/tyler-perry.jpg"
+                },
+                new Artist() {
+                    FullName = "Carrie Coon",
+                    BirthDate = new DateTime(1981, 1, 24),
+                    CounryId = usId,
+                    PicturePath = "~/Images/carrie-coon.jpg"
+                },
+                new Artist() {
+                    FullName = "Rosamund Pike",
+                    BirthDate = new DateTime(1979, 1, 28),
+                    CounryId = usId,
+                    PicturePath = "~/Images/rosamund-pike.jpg"
+                },
+                new Artist() {
+                    FullName = "Luke Evans",
+                    BirthDate = new DateTime(1979, 4, 15),
+                    CounryId = ukId,
+                    PicturePath = "~/Images/Luke-Evans.jpg"
+                },
+                new Artist() {
+                    FullName = "Sarah Gadon",
+                    BirthDate = new DateTime(1987, 4, 4),
+                    CounryId = canadaId,
+                    PicturePath = "~/Images/Sarah-Gadon.jpg"
+                },
+                new Artist() {
+                    FullName = "Dominic Cooper",
+                    BirthDate = new DateTime(1978, 6, 2),
+                    CounryId = ukId,
+                    PicturePath = "~/Images/Dominic-Cooper.jpg"
+                },
+                new Artist() {
+                    FullName = "Annabelle Wallis",
+                    BirthDate = new DateTime(1984, 9, 25),
+                    CounryId = ukId,
+                    PicturePath = "~/Images/Annabelle-Wallis.jpg"
+                },
+                new Artist() {
+                    FullName = "Scarlett Johansson",
+                    BirthDate = new DateTime(1984, 9, 22),
+                    CounryId = usId,
+                    PicturePath = "~/Images/Scarlett-Johansson.jpg"
+                },
+                new Artist() {
+                    FullName = "Aaron Taylor-Johnson",
+                    BirthDate = new DateTime(1990, 6, 13),
+                    CounryId = ukId,
+                    PicturePath = "~/Images/Aaron-Taylor-Johnson.jpg"
+                },
+                new Artist() {
+                    FullName = "Robert Downey Jr.",
+                    BirthDate = new DateTime(1965, 4, 4),
+                    CounryId = usId,
+                    PicturePath = "~/Images/Robert-Downey-Jr.jpg"
+                },
+                new Artist() {
+                    FullName = "Chris Hemsworth",
+                    BirthDate = new DateTime(1983, 8, 11),
+                    CounryId = australiaId,
+                    PicturePath = "~/Images/Chris-Hemsworth.jpg"
+                },
+                new Artist() {
+                    FullName = "James Spader",
+                    BirthDate = new DateTime(1960, 2, 7),
+                    CounryId = usId,
+                    PicturePath = "~/Images/James-Spader.jpg"
+                },
+                new Artist() {
+                    FullName = "Chris Evans",
+                    BirthDate = new DateTime(1981, 6, 13),
+                    CounryId = usId,
+                    PicturePath = "~/Images/Chris-Evans.jpg"
+                },
+                new Artist() {
+                    FullName = "Elizabeth Olsen",
+                    BirthDate = new DateTime(1999, 2, 16),
+                    CounryId = usId,
+                    PicturePath = "~/Images/Elizabeth-Olsen.jpg"
+                },
+                new Artist() {
+                    FullName = "Samuel L. Jackson",
+                    BirthDate = new DateTime(1948, 12, 21),
+                    CounryId = usId,
+                    PicturePath = "~/Images/Samuel-L-Jackson.jpg"
+                },
+                new Artist() {
+                    FullName = "Grant Gustin",
+                    BirthDate = new DateTime(1990, 1, 14),
+                    CounryId = usId,
+                    PicturePath = "~/Images/Grant-Gustin.jpg"
+                },
+                new Artist() {
+                    FullName = "Danielle Panabaker",
+                    BirthDate = new DateTime(1987, 9, 19),
+                    CounryId = usId,
+                    PicturePath = "~/Images/Danielle-Panabaker.jpg"
+                },
+                new Artist() {
+                    FullName = "Dylan O'Brien",
+                    BirthDate = new DateTime(1991, 8, 26),
+                    CounryId = usId,
+                    PicturePath = "~/Images/Dylan-O-Brien.jpg"
+                },
+                new Artist() {
+                    FullName = "Aml Ameen",
+                    BirthDate = new DateTime(1985, 6, 30),
+                    CounryId = ukId,
+                    PicturePath = "~/Images/Aml-Ameen.jpg"
+                },
+                new Artist() {
+                    FullName = "Jena Malone",
+                    BirthDate = new DateTime(1984, 11, 21),
+                    CounryId = usId,
+                    PicturePath = "~/Images/Jena-Malone.jpg"
+                },
+                new Artist() {
+                    FullName = "Gal Gadot",
+                    BirthDate = new DateTime(1985, 4, 30),
+                    CounryId = israelId,
+                    PicturePath = "~/Images/Gal-Gadot.jpg"
+                },
+                new Artist() {
+                    FullName = "Jason Momoa",
+                    BirthDate = new DateTime(1979, 8, 1),
+                    CounryId = usId,
+                    PicturePath = "~/Images/Jason-Momoa.jpg"
+                },
+                new Artist() {
+                    FullName = "Henry Cavill",
+                    BirthDate = new DateTime(1983, 5, 5),
+                    CounryId = ukId,
+                    PicturePath = "~/Images/Henry-Cavill.jpg"
+                },
+                new Artist() {
+                    FullName = "Amy Adams",
+                    BirthDate = new DateTime(1974, 8, 20),
+                    CounryId = italyId,
+                    PicturePath = "~/Images/Amy-Adams.jpg"
+                },
+                new Artist() {
+                    FullName = "Diane Lane",
+                    BirthDate = new DateTime(1965, 1, 22),
+                    CounryId = usId,
+                    PicturePath = "~/Images/Diane-Lane.jpg"
+                },
+                new Artist() {
+                    FullName = "Jesse Eisenberg",
+                    BirthDate = new DateTime(1983, 10, 5),
+                    CounryId = usId,
+                    PicturePath = "~/Images/Jesse-Eisenberg.jpg"
+                },
+                new Artist() {
+                    FullName = "Jeremy Irons",
+                    BirthDate = new DateTime(1949, 9, 19),
+                    CounryId = ukId,
+                    PicturePath = "~/Images/Jeremy-Irons.jpg"
+                }
+            });
 
             dbContext.SaveChanges();
             Console.WriteLine("Artists seeded");
@@ -263,29 +677,30 @@
         {
             dbContext.Languages.AddRange(new List<Language>()
             {    
-                new Language() { Name = "Mandarin" },
-                new Language() { Name = "Spanish" },
                 new Language() { Name = "English" },
+                new Language() { Name = "Bulgarian" },
+                new Language() { Name = "Spanish" },
+                new Language() { Name = "German" },
+                new Language() { Name = "Italian" },
+                new Language() { Name = "French" },
+                new Language() { Name = "Portuguese" },
+                new Language() { Name = "Russian" },
+                new Language() { Name = "Mandarin" },
                 new Language() { Name = "Hindi" },
                 new Language() { Name = "Arabic" },
-                new Language() { Name = "Portuguese" },
                 new Language() { Name = "Bengali" },
-                new Language() { Name = "Russian" },
                 new Language() { Name = "Japanese" },
                 new Language() { Name = "Punjabi" },
-                new Language() { Name = "German" },
                 new Language() { Name = "Javanese" },
                 new Language() { Name = "Wu" },
                 new Language() { Name = "Malay/Indonesian" },
                 new Language() { Name = "Telugu" },
                 new Language() { Name = "Vietnamese" },
                 new Language() { Name = "Korean" },
-                new Language() { Name = "French" },
                 new Language() { Name = "Marathi" },
                 new Language() { Name = "Tamil" },
                 new Language() { Name = "Urdu" },
                 new Language() { Name = "Turkish" },
-                new Language() { Name = "Italian" },
                 new Language() { Name = "Cantonese" },
                 new Language() { Name = "Persian" },
                 new Language() { Name = "Thai" },
@@ -362,8 +777,7 @@
                 new Language() { Name = "Mossi" },
                 new Language() { Name = "Xhosa" },
                 new Language() { Name = "Belarusian" },
-                new Language() { Name = "Balochi" },
-                new Language() { Name = "Bulgarian" }
+                new Language() { Name = "Balochi" }
             });
 
             dbContext.SaveChanges();
@@ -372,7 +786,6 @@
 
         private static void SeedCoutries(CinephileDbEntities dbContext)
         {
-
             dbContext.Countries.AddRange(new List<Country>()
             {
                 new Country() { Name = "Afghanistan" },

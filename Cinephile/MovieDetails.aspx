@@ -74,7 +74,11 @@
                                 AllowSorting="true" runat="server" OnPageIndexChanging="GridViewActors_PageIndexChanging"
                                 OnSorting="GridViewActors_Sorting" GridLines="None" CellPadding="2">
                                 <Columns>
-                                    <asp:ImageField DataImageUrlField="PicturePath"></asp:ImageField>
+                                    <asp:ImageField DataImageUrlField="PicturePath"
+                                        ControlStyle-Width="50%"
+                                        ItemStyle-HorizontalAlign="Center"
+                                        ItemStyle-VerticalAlign="Middle">
+                                    </asp:ImageField>
                                     <asp:HyperLinkField DataTextField="FullName" HeaderText="Name"
                                         SortExpression="FullName" DataNavigateUrlFields='Id' DataNavigateUrlFormatString="~\ArtistDetails?id={0}" />
                                     <asp:TemplateField HeaderText="Country" SortExpression="CounryId">
@@ -84,7 +88,7 @@
                                     </asp:TemplateField>
                                     <asp:BoundField DataField="BirthDate" DataFormatString="{0:d}" HeaderText="Born" SortExpression="BirthDate" />
                                 </Columns>
-                                <PagerStyle CssClass="pagination" HorizontalAlign="Center" VerticalAlign="Middle"/>
+                                <PagerStyle CssClass="pagination" HorizontalAlign="Center" VerticalAlign="Middle" />
                             </asp:GridView>
                         </div>
                     </div>
@@ -103,9 +107,9 @@
                                 DataKeyNames="UserId,MovieId" DataSourceID="EntityDataSourceReviews"
                                 ItemType="Cinephile.Data.Review">
                                 <EmptyDataTemplate>
-                                    <div class="text-center"> 
-                                         <span class="alert alert-warning">No reviews for this movie.</span>
-                                    </div>                                  
+                                    <div class="text-center">
+                                        <span class="alert alert-warning">No reviews for this movie.</span>
+                                    </div>
                                 </EmptyDataTemplate>
                                 <ItemTemplate>
                                     <div class="panel panel-default">
@@ -140,14 +144,14 @@
                                     </div>
                                 </LayoutTemplate>
                             </asp:ListView>
-                        </div>                        
-                        <% if (HttpContext.Current.User.Identity.IsAuthenticated && HasReviewed() == false)
-	                    { %>
+                        </div>
+                        <% if(HttpContext.Current.User.Identity.IsAuthenticated && HasReviewed() == false)
+                           { %>
                         <div class="panel-footer text-center">
                             <asp:Button Text="Add Review" CssClass="btn btn-warning" PostBackUrl='<%# "~/ReviewMovie.aspx?id=" + Request.Params["id"] %>' runat="server" />
                         </div>
-		                <%    
-	                    } %>
+                        <%    
+                        } %>
                     </div>
                 </div>
             </div>
@@ -156,7 +160,7 @@
         <asp:EntityDataSource ID="EntityDataSourceReviews" runat="server"
             ConnectionString="name=CinephileDbEntities" DefaultContainerName="CinephileDbEntities"
             EnableFlattening="False" EntitySetName="Reviews" Where="it.MovieId=@MovId">
-             <WhereParameters>
+            <WhereParameters>
                 <asp:ControlParameter Name="MovId" ControlID="RequestId" DbType="Guid" />
             </WhereParameters>
         </asp:EntityDataSource>

@@ -13,15 +13,6 @@ namespace Cinephile.Admin {
     public partial class Users {
         
         /// <summary>
-        /// ListViewDataPager control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataPager ListViewDataPager;
-        
-        /// <summary>
         /// SearchBox control.
         /// </summary>
         /// <remarks>
@@ -31,15 +22,6 @@ namespace Cinephile.Admin {
         protected global::System.Web.UI.WebControls.TextBox SearchBox;
         
         /// <summary>
-        /// ShowAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ShowAll;
-        
-        /// <summary>
         /// SearchSubmitBtn control.
         /// </summary>
         /// <remarks>
@@ -47,6 +29,15 @@ namespace Cinephile.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SearchSubmitBtn;
+        
+        /// <summary>
+        /// ListViewDataPager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager ListViewDataPager;
         
         /// <summary>
         /// SortList control.
@@ -67,13 +58,40 @@ namespace Cinephile.Admin {
         protected global::System.Web.UI.WebControls.DropDownList SortDirectionList;
         
         /// <summary>
-        /// Button1 control.
+        /// SortButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button SortButton;
+        
+        /// <summary>
+        /// ShowAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ShowAll;
+        
+        /// <summary>
+        /// RolesDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList RolesDropDownList;
+        
+        /// <summary>
+        /// NewRoleButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button NewRoleButton;
         
         /// <summary>
         /// Message control.
@@ -128,32 +146,5 @@ namespace Cinephile.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label UserRole;
-        
-        /// <summary>
-        /// NewRoleLable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NewRoleLable;
-        
-        /// <summary>
-        /// RolesDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList RolesDropDownList;
-        
-        /// <summary>
-        /// NewRoleButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button NewRoleButton;
     }
 }
