@@ -129,14 +129,20 @@
         SelectMethod="MoviesListView_GetData"
         DeleteMethod="MoviesListView_DeleteItem"
         OnSelectedIndexChanging="MoviesListView_SelectedIndexChanging"
-        DataKeyNames="Id">
+        DataKeyNames="Id"
+        GroupItemCount="4">
         <LayoutTemplate>
             <div id="DataContainer" runat="server" class="row">
-                <div id="ItemPlaceholder" runat="server">
-                </div>
+                <asp:PlaceHolder ID="groupPlaceholder" runat="server" />
             </div>
         </LayoutTemplate>
 
+        <GroupTemplate>
+            <div id="DataContainer" runat="server" class="col-md-12">
+                <asp:PlaceHolder ID="ItemPlaceholder" runat="server" />
+            </div>
+        </GroupTemplate>
+        
         <EmptyDataTemplate>
             <div id="DataContainer" runat="server">
                 <div id="ItemPlaceholder" runat="server">
