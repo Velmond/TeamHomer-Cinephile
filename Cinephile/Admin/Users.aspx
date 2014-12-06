@@ -16,8 +16,7 @@
                             OnClick="SearchSubmitBtn_Click" />
                     </asp:Panel>
                 </div>
-                <div class="col-md-6"></div>
-                <div class="col-md-3">
+                <div class="col-md-offset-6 col-md-3">
                     <div class="text-right">
                         <asp:DataPager runat="server" ID="ListViewDataPager"
                             PageSize="5" PagedControlID="UsersListView" QueryStringField="page">
@@ -92,9 +91,7 @@
                 <h4 class="text-center">Administrator's page</h4>
             </div>
             <div class="col-md-8">
-                <div class="col-md-4">
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-offset-4 col-md-4">
                     <asp:DropDownList runat="server" ID="RolesDropDownList"
                         SelectMethod="RolesDropDownList_GetData"
                         DataTextField="Name"
@@ -129,8 +126,7 @@
                 OnPagePropertiesChanging="UsersListView_PagePropertiesChanging"
                 DataKeyNames="Id">
                 <LayoutTemplate>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
+                    <div class="col-md-offset-1 col-md-10 col-md-offset-1">
                         <div id="DataContainer" runat="server" class="row">
                             <table class="table table-striped table-hover ">
                                 <thead>
@@ -145,7 +141,6 @@
                             </table>
                         </div>
                     </div>
-                    <div class="col-md-1"></div>
                 </LayoutTemplate>
 
                 <EmptyDataTemplate>
@@ -185,8 +180,7 @@
         </div>
 
         <div class="col-md-6">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
+            <div class="col-md-offset-1 col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <strong>User information</strong>
@@ -211,7 +205,6 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-1"></div>
         </div>
     </div>
 

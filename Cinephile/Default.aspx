@@ -5,7 +5,7 @@
     <div class="jumbotron">
         <h1 class="home-page-title">Cinephile</h1>
         <div class="row">
-            <p class="col-md-8 lead">The place for all your favorite movies information.</p>
+            <p class="col-md-8 lead">The place for all your favorite movies' information.</p>
             <div class="col-md-4 pull-right home-page-search-container">
                 <asp:Panel runat="server" DefaultButton="SearchSubmitBtn">
                     <asp:TextBox runat="server" ID="HomeSearchBox"

@@ -16,8 +16,7 @@
                             OnClick="SearchSubmitBtn_Click" />
                     </asp:Panel>
                 </div>
-                <div class="col-md-6"></div>
-                <div class="col-md-3">
+                <div class="col-md-offset-6 col-md-3">
                     <div class="text-right">
                         <asp:DataPager runat="server" ID="ListViewDataPager"
                             PageSize="8" PagedControlID="MoviesListView" QueryStringField="page">
@@ -151,8 +150,7 @@
                 <% if(HttpContext.Current.User.Identity.IsAuthenticated && HttpContext.Current.User.IsInRole("admin"))
                    { %>
                 <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
+                    <div class="col-md-offset-2 col-md-8 col-md-offset-2">
                         <asp:LinkButton ID="SelectButton" runat="server" CommandName="Select" Text="Select"
                             CssClass="btn btn-default btn-block" />
                     </div>
@@ -174,8 +172,7 @@
                 <% if(HttpContext.Current.User.Identity.IsAuthenticated && HttpContext.Current.User.IsInRole("admin"))
                    { %>
                 <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
+                    <div class="col-md-offset-2 col-md-8 col-md-offset-2">
                         <asp:LinkButton ID="SelectButton" runat="server" CommandName="Select" Text="Select"
                             CssClass="btn btn-default btn-block" />
                     </div>
