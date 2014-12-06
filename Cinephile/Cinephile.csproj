@@ -359,6 +359,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="ArtistDetails.aspx.cs">
       <DependentUpon>ArtistDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ArtistDetails.aspx.designer.cs">
       <DependentUpon>ArtistDetails.aspx</DependentUpon>
