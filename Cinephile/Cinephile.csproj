@@ -190,7 +190,9 @@
     <Content Include="Images\Scarlett-Johansson.jpg" />
     <Content Include="Images\Schindler-s-List.jpg" />
     <Content Include="Images\Scott-Pilgrim-vs-the-World.jpg" />
-    <Content Include="Images\star-empty.png" />
+    <Content Include="Images\star-empty.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\star-half.png" />
     <Content Include="Images\star.png" />
     <Content Include="Images\the-dark-knight-poster.jpg" />
